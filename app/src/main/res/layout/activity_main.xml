@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/label_name"/>
+        android:text="@string/label_name" />
 
     <EditText
         android:layout_width="match_parent"
@@ -25,11 +27,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/input_surname"/>
+        android:id="@+id/input_surname"
+        android:layout_marginBottom="20dp"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp">
 
         <Button
             android:id="@+id/action_save"
@@ -41,29 +45,30 @@
             android:id="@+id/action_clean"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/action_clean" />
+            android:text="@string/action_clean"
+            android:layout_marginLeft="50dp"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="46dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp">
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_name"
+            android:layout_marginRight="50dp"/>
 
         <TextView
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="@string/label_name" />
-
-        <TextView
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:text="@string/label_surname" />
+            android:text="@string/label_surname"
+            android:layout_marginRight="50dp"/>
 
 
     </LinearLayout>
