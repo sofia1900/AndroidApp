@@ -49,4 +49,5 @@ dependencies {
     // Ciclo Vida: ViewModel
     val lifecycle_version = "2.6.2"
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+
 }

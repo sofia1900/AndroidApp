@@ -7,4 +7,6 @@ interface UserRepository {
 
     fun saveUser (name : String, surname : String) : Either<ErrorApp, Boolean>
 
+    fun getUser () : Either<ErrorApp, User>
+
 }

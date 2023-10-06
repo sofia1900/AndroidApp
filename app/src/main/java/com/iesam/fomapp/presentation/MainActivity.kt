@@ -7,13 +7,16 @@ import android.widget.EditText
 import com.iesam.fomapp.R
 import com.iesam.fomapp.data.UserDataRepository
 import com.iesam.fomapp.data.local.XmlLocalDataSource
+import com.iesam.fomapp.domain.useCases.GetUserUseCase
 import com.iesam.fomapp.domain.useCases.SaveUserUseCase
 
 
 class MainActivity : AppCompatActivity() {
 
     private val viewModel : MainViewModel by lazy {
-        MainViewModel (SaveUserUseCase(UserDataRepository(XmlLocalDataSource(this))))
+        MainViewModel (SaveUserUseCase(UserDataRepository(XmlLocalDataSource(this))),
+            GetUserUseCase(UserDataRepository(XmlLocalDataSource(this)))
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +35,10 @@ class MainActivity : AppCompatActivity() {
         actionButtonClean.setOnClickListener {
             clean()
         }
+    }
+
+    private fun setupObservers (){
+
     }
 
     private fun getNameInput(): String =

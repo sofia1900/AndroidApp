@@ -5,6 +5,7 @@ import com.iesam.fomapp.app.Either
 import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.app.left
 import com.iesam.fomapp.app.right
+import com.iesam.fomapp.domain.User
 
 class XmlLocalDataSource (private val context : Context){
 
@@ -21,6 +22,17 @@ class XmlLocalDataSource (private val context : Context){
             }
             true.right()
         }catch (ex : Exception){
+            return ErrorApp.UnknowError.left()
+        }
+    }
+    fun getUser(): Either<ErrorApp, User> {
+        return try {
+            User(
+                sharedPref.getInt("id", 0),
+                sharedPref.getString("username", "")!!,
+                sharedPref.getString("surname", "")!!
+            ).right()
+        } catch (ex: Exception) {
             return ErrorApp.UnknowError.left()
         }
     }
