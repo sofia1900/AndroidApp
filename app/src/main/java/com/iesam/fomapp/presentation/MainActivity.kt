@@ -42,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             clean()
         }
 
+        val actionButtonDelete = findViewById<Button>(R.id.action_delete)
+        actionButtonDelete.setOnClickListener {
+
+        }
+
     }
 
     private fun getUser (){
