@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.iesam.fomapp.R
@@ -33,10 +34,7 @@ class MainActivity : AppCompatActivity() {
         val actionButtonSave = findViewById<Button>(R.id.action_save)
         actionButtonSave.setOnClickListener {
             viewModel.saveUser(getNameInput(), getSurnameInput()) //GUARDO LOS DATOS
-
-            //setupObservers() //SUSCRIPCION
-            //viewModel.getUser() //EJECUTO EL HILO SECUNDARIO PARA RECOGER LA INFORMACION
-
+            getUser()
         }
 
         val actionButtonClean = findViewById<Button>(R.id.action_clean)
@@ -44,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             clean()
         }
 
+    }
+
+    private fun getUser (){
+        setupObservers() //SUSCRIPCION
+        viewModel.getUser() //EJECUTO EL HILO SECUNDARIO PARA RECOGER LA INFORMACION
     }
 
     private fun setupObservers (){
@@ -62,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun visibleElements (){
-        findViewById<TextView>(R.id.linear).visibility = View.VISIBLE
+        findViewById<LinearLayout>(R.id.linear).visibility = View.VISIBLE
     }
 
     private fun setNameInput (name : String){
@@ -70,7 +73,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setSurnameInput (surname : String){
-        findViewById<EditText>(R.id.text_surname).setText(surname)
+        findViewById<TextView>(R.id.text_surname).setText(surname)
     }
 
     private fun getNameInput(): String =
