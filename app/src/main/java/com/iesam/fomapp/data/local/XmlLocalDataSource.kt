@@ -7,9 +7,8 @@ import com.iesam.fomapp.app.left
 import com.iesam.fomapp.app.right
 
 class XmlLocalDataSource (private val context : Context){
-    //nombre del fichero
+
     private val sharedPref = context.getSharedPreferences("users", Context.MODE_PRIVATE)
-    //Si es accesible desde otra app
 
     //https://developer.android.com/training/data-storage/shared-preferences?hl=es-419
     fun saveUser(name : String, surname : String) : Either<ErrorApp, Boolean> {
