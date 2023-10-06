@@ -11,27 +11,21 @@ import com.iesam.fomapp.domain.useCases.SaveUserUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MainViewModel (val saveUserUseCase: SaveUserUseCase,
-                     val getUserUseCase: GetUserUseCase) :  ViewModel() {
+class MainViewModel (private val saveUserUseCase: SaveUserUseCase,
+                     private val getUserUseCase: GetUserUseCase) :  ViewModel() {
 
     private val _uiState = MutableLiveData<UiState>()
     val uiState: LiveData<UiState> = _uiState
 
     fun saveUser (name : String, surname : String){
-        saveUserUseCase.invoke(name, surname).fold(
+        saveUserUseCase(name, surname).fold(
             {responseError(it)},
             {responseSuccess(it)}
         )
     }
 
-    fun getUser (){
-        getUserUseCase.invoke().fold(
-            {responseError(it)},
-            {responseGetUserSuccess(it)}
-        )
-    }
 
-    fun loadUser(){
+    fun getUser (){
         viewModelScope.launch(Dispatchers.IO) {
             getUserUseCase().fold(
                 { responseError(it) },

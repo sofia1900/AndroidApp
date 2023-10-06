@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.iesam.fomapp.R
 import com.iesam.fomapp.data.UserDataRepository
@@ -33,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         actionButtonSave.setOnClickListener {
             viewModel.saveUser(getNameInput(), getSurnameInput()) //GUARDO LOS DATOS
 
-            setupObservers() //SUSCRIPCION
-            viewModel.getUser() //EJECUTO EL HILO SECUNDARIO PARA RECOGER LA INFORMACION
+            //setupObservers() //SUSCRIPCION
+            //viewModel.getUser() //EJECUTO EL HILO SECUNDARIO PARA RECOGER LA INFORMACION
 
         }
 
@@ -61,11 +62,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun visibleElements (){
-        findViewById<EditText>(R.id.linear).visibility = View.VISIBLE
+        findViewById<TextView>(R.id.linear).visibility = View.VISIBLE
     }
 
     private fun setNameInput (name : String){
-        findViewById<EditText>(R.id.text_name).setText(name)
+        findViewById<TextView>(R.id.text_name).setText(name)
     }
 
     private fun setSurnameInput (surname : String){
