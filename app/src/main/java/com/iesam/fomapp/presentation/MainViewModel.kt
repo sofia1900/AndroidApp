@@ -25,7 +25,10 @@ class MainViewModel (val saveUserUseCase: SaveUserUseCase,
     }
 
     fun getUser (){
-
+        getUserUseCase.invoke().fold(
+            {responseError(it)},
+            {responseGetUserSuccess(it)}
+        )
     }
 
     fun loadUser(){
