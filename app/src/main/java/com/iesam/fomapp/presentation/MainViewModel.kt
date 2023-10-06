@@ -9,6 +9,7 @@ import com.iesam.fomapp.domain.User
 import com.iesam.fomapp.domain.useCases.GetUserUseCase
 import com.iesam.fomapp.domain.useCases.SaveUserUseCase
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainViewModel (val saveUserUseCase: SaveUserUseCase,
                      val getUserUseCase: GetUserUseCase) :  ViewModel() {
