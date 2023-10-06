@@ -27,6 +27,11 @@ class MainActivity : AppCompatActivity() {
         actionButtonSave.setOnClickListener {
             viewModel.saveUser(getNameInput(), getSurnameInput())
         }
+
+        val actionButtonClean = findViewById<Button>(R.id.action_clean)
+        actionButtonClean.setOnClickListener {
+            clean()
+        }
     }
 
     private fun getNameInput(): String =
@@ -34,4 +39,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun getSurnameInput(): String =
         findViewById<EditText>(R.id.input_surname).text.toString()
+
+
+    private fun clean () {
+        findViewById<EditText>(R.id.input_name).setText("")
+        findViewById<EditText>(R.id.input_surname).setText("")
+    }
 }
