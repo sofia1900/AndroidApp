@@ -1,5 +1,6 @@
 package com.iesam.fomapp.presentation
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -44,9 +45,11 @@ class MainViewModel (private val saveUserUseCase: SaveUserUseCase,
     }
 
     private fun responseError(errorApp: ErrorApp) {
+        Log.d("@dev", errorApp.toString())
     }
 
     private fun responseSuccess(isOk: Boolean) {
+        Log.d("@dev", isOk.toString())
     }
 
     private fun responseGetUserSuccess (user : User){
