@@ -6,13 +6,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.domain.User
+import com.iesam.fomapp.domain.useCases.DeleteUserUseCase
 import com.iesam.fomapp.domain.useCases.GetUserUseCase
 import com.iesam.fomapp.domain.useCases.SaveUserUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainViewModel (private val saveUserUseCase: SaveUserUseCase,
-                     private val getUserUseCase: GetUserUseCase) :  ViewModel() {
+                     private val getUserUseCase: GetUserUseCase,
+                     private val deleteUserUseCase: DeleteUserUseCase) :  ViewModel() {
 
     private val _uiState = MutableLiveData<UiState>()
     val uiState: LiveData<UiState> = _uiState
@@ -32,6 +34,13 @@ class MainViewModel (private val saveUserUseCase: SaveUserUseCase,
                 { responseGetUserSuccess(it) }
             )
         }
+    }
+
+    fun deleteUser () {
+        deleteUserUseCase().fold(
+            {responseError(it)},
+            {responseSuccess(it)}
+        )
     }
 
     private fun responseError(errorApp: ErrorApp) {

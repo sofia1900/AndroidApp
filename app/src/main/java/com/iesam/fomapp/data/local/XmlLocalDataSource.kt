@@ -37,4 +37,13 @@ class XmlLocalDataSource (private val context : Context){
         }
     }
 
+    fun deleteUsers () : Either<ErrorApp, Boolean>{
+        return try{
+            sharedPref.edit().clear()
+            true.right()
+        }catch (ex : Exception){
+            return ErrorApp.UnknowError.left()
+        }
+    }
+
 }

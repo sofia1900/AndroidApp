@@ -12,6 +12,7 @@ import com.iesam.fomapp.R
 import com.iesam.fomapp.data.UserDataRepository
 import com.iesam.fomapp.data.local.XmlLocalDataSource
 import com.iesam.fomapp.domain.User
+import com.iesam.fomapp.domain.useCases.DeleteUserUseCase
 import com.iesam.fomapp.domain.useCases.GetUserUseCase
 import com.iesam.fomapp.domain.useCases.SaveUserUseCase
 
@@ -20,7 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel : MainViewModel by lazy {
         MainViewModel (SaveUserUseCase(UserDataRepository(XmlLocalDataSource(this))),
-            GetUserUseCase(UserDataRepository(XmlLocalDataSource(this)))
+            GetUserUseCase(UserDataRepository(XmlLocalDataSource(this))),
+            DeleteUserUseCase(UserDataRepository(XmlLocalDataSource(this)))
         )
     }
 
@@ -39,12 +41,16 @@ class MainActivity : AppCompatActivity() {
 
         val actionButtonClean = findViewById<Button>(R.id.action_clean)
         actionButtonClean.setOnClickListener {
-            clean()
+            cleanInput()
         }
 
         val actionButtonDelete = findViewById<Button>(R.id.action_delete)
         actionButtonDelete.setOnClickListener {
-
+            //ELIMINAR DE LA PANTALLA
+            cleanText()
+            invisibleElements()
+            //ELIMINAR DE LOCAL
+            viewModel.deleteUser()
         }
 
     }
@@ -88,8 +94,17 @@ class MainActivity : AppCompatActivity() {
         findViewById<EditText>(R.id.input_surname).text.toString()
 
 
-    private fun clean () {
+    private fun cleanInput () {
         findViewById<EditText>(R.id.input_name).setText("")
         findViewById<EditText>(R.id.input_surname).setText("")
+    }
+
+    private fun cleanText (){
+        findViewById<TextView>(R.id.text_name).setText("")
+        findViewById<TextView>(R.id.text_surname).setText("")
+    }
+
+    private fun invisibleElements(){
+        findViewById<LinearLayout>(R.id.linear).visibility = View.GONE
     }
 }

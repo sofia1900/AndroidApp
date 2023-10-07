@@ -9,4 +9,6 @@ interface UserRepository {
 
     fun getUser () : Either<ErrorApp, User>
 
+    fun deleteUser () : Either<ErrorApp, Boolean>
+
 }
