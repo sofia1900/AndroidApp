@@ -45,11 +45,9 @@ class MainViewModel (private val saveUserUseCase: SaveUserUseCase,
     }
 
     private fun responseError(errorApp: ErrorApp) {
-        Log.d("@dev", errorApp.toString())
     }
 
     private fun responseSuccess(isOk: Boolean) {
-        Log.d("@dev", isOk.toString())
     }
 
     private fun responseGetUserSuccess (user : User){
