@@ -75,7 +75,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linear"
+        android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -84,23 +84,63 @@
 
 
         <TextView
-            android:id="@+id/text_name"
+            android:id="@+id/text_name1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="50dp"/>
 
         <TextView
-            android:id="@+id/text_surname"
+            android:id="@+id/text_surname1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="80dp"/>
 
         <Button
-            android:id="@+id/action_delete"
+            android:id="@+id/action_delete1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/action_delete"/>
 
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/input_id1"
+            android:visibility="invisible"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:visibility="invisible" >
+
+
+        <TextView
+            android:id="@+id/text_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"/>
+
+        <TextView
+            android:id="@+id/text_surname2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="80dp"/>
+
+        <Button
+            android:id="@+id/action_delete2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/action_delete"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/input_id2"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 

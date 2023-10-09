@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             cleanInput()
         }
 
-        val actionButtonDelete = findViewById<Button>(R.id.action_delete)
+        val actionButtonDelete = findViewById<Button>(R.id.action_delete1)
         actionButtonDelete.setOnClickListener {
             //ELIMINAR DE LA PANTALLA
             cleanText()
@@ -76,15 +76,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun visibleElements (){
-        findViewById<LinearLayout>(R.id.linear).visibility = View.VISIBLE
+        findViewById<LinearLayout>(R.id.linear1).visibility = View.VISIBLE
     }
 
     private fun setNameInput (name : String){
-        findViewById<TextView>(R.id.text_name).setText(name)
+        findViewById<TextView>(R.id.text_name1).setText(name)
     }
 
     private fun setSurnameInput (surname : String){
-        findViewById<TextView>(R.id.text_surname).setText(surname)
+        findViewById<TextView>(R.id.text_surname1).setText(surname)
     }
 
     private fun getNameInput(): String =
@@ -100,11 +100,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun cleanText (){
-        findViewById<TextView>(R.id.text_name).setText("")
-        findViewById<TextView>(R.id.text_surname).setText("")
+        findViewById<TextView>(R.id.text_name1).setText("")
+        findViewById<TextView>(R.id.text_surname1).setText("")
     }
 
     private fun invisibleElements(){
-        findViewById<LinearLayout>(R.id.linear).visibility = View.GONE
+        findViewById<LinearLayout>(R.id.linear1).visibility = View.GONE
     }
 }

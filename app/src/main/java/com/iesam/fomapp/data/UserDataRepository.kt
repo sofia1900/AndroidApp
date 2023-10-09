@@ -11,11 +11,11 @@ class UserDataRepository (private val localDataSource: XmlLocalDataSource): User
         return localDataSource.saveUser(name, surname)
     }
 
-    override fun getUser(): Either<ErrorApp, User> {
-        return localDataSource.getUser()
+    override fun getUser(userId : Int): Either<ErrorApp, User> {
+        return localDataSource.getUserById(userId)
     }
 
-    override fun deleteUser(): Either<ErrorApp, Boolean> {
-        return localDataSource.deleteUser()
+    override fun deleteUser(userId : Int ): Either<ErrorApp, Boolean> {
+        return localDataSource.deleteUserById(userId)
     }
 }

@@ -50,4 +50,7 @@ dependencies {
     val lifecycle_version = "2.6.2"
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
 
+    //Libreira GSON
+    implementation("com.google.code.gson:gson:2.10.1")
+
 }

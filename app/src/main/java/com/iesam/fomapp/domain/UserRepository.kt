@@ -7,8 +7,8 @@ interface UserRepository {
 
     fun saveUser (name : String, surname : String) : Either<ErrorApp, Boolean>
 
-    fun getUser () : Either<ErrorApp, User>
+    fun getUser (userId : Int) : Either<ErrorApp, User>
 
-    fun deleteUser () : Either<ErrorApp, Boolean>
+    fun deleteUser (userId : Int) : Either<ErrorApp, Boolean>
 
 }
