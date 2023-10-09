@@ -7,7 +7,7 @@ import com.iesam.fomapp.features.ex02.domain.UserRepository
 
 class GetUserUseCase (private val userRepository : UserRepository) {
 
-    operator fun invoke () : Either<ErrorApp, User> {
-        return userRepository.getUser()
+    operator fun invoke (idUser : Int) : Either<ErrorApp, User> {
+        return userRepository.getUser(idUser)
     }
 }

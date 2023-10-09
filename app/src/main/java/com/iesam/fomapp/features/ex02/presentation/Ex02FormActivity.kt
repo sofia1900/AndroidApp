@@ -52,14 +52,14 @@ class Ex02FormActivity : AppCompatActivity() {
             cleanText()
             invisibleElements()
             //ELIMINAR DE LOCAL
-            viewModel.deleteUser()
+            //viewModel.deleteUser()
         }
 
     }
 
     private fun getUser (){
         setupObservers() //SUSCRIPCION
-        viewModel.getUser() //EJECUTO EL HILO SECUNDARIO PARA RECOGER LA INFORMACION
+        //viewModel.getUser() //EJECUTO EL HILO SECUNDARIO PARA RECOGER LA INFORMACION
     }
 
     private fun setupObservers (){

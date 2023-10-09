@@ -28,17 +28,17 @@ class Ex02ViewModel (private val saveUserUseCase: SaveUserUseCase,
     }
 
 
-    fun getUser (){
+    fun getUser (idUser : Int){
         viewModelScope.launch(Dispatchers.IO) {
-            getUserUseCase().fold(
+            getUserUseCase(idUser).fold(
                 { responseError(it) },
                 { responseGetUserSuccess(it) }
             )
         }
     }
 
-    fun deleteUser () {
-        deleteUserUseCase().fold(
+    fun deleteUser (idUser : Int) {
+        deleteUserUseCase(idUser).fold(
             {responseError(it)},
             {responseSuccess(it)}
         )
