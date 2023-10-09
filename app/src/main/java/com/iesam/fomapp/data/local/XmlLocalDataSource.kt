@@ -48,6 +48,8 @@ class XmlLocalDataSource (private val context : Context){
                 mapUser.remove(userId.toString())
             }
 
+            sharedPref.edit().remove("users").commit()
+
             //3. Serializar usuario a usuario y guardarlo en el mxl
             for (key in mapUser.keys) {
 
