@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.iesam.fomapp.R
+import com.iesam.fomapp.features.ex01.presentation.Ex01FormActivity
 import com.iesam.fomapp.features.ex02.presentation.Ex02FormActivity
 import com.iesam.fomapp.features.ex03.presentation.Ex03Activity
 
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupView (){
 
         findViewById<Button>(R.id.action_01Form).setOnClickListener {
-            startActivity(Intent(this, Ex03Activity::class.java))
+            startActivity(Intent(this, Ex01FormActivity::class.java))
         }
 
         findViewById<Button>(R.id.action_02Form).setOnClickListener {
