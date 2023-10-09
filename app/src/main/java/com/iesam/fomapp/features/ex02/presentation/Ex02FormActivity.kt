@@ -1,4 +1,4 @@
-package com.iesam.fomapp.presentation
+package com.iesam.fomapp.features.ex02.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,18 +9,18 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.iesam.fomapp.R
-import com.iesam.fomapp.data.UserDataRepository
-import com.iesam.fomapp.data.local.XmlLocalDataSource
-import com.iesam.fomapp.domain.User
-import com.iesam.fomapp.domain.useCases.DeleteUserUseCase
-import com.iesam.fomapp.domain.useCases.GetUserUseCase
-import com.iesam.fomapp.domain.useCases.SaveUserUseCase
+import com.iesam.fomapp.features.ex02.data.UserDataRepository
+import com.iesam.fomapp.features.ex02.data.local.XmlLocalDataSource
+import com.iesam.fomapp.features.ex02.domain.User
+import com.iesam.fomapp.features.ex02.domain.useCases.DeleteUserUseCase
+import com.iesam.fomapp.features.ex02.domain.useCases.GetUserUseCase
+import com.iesam.fomapp.features.ex02.domain.useCases.SaveUserUseCase
 
 
-class MainActivity : AppCompatActivity() {
+class Ex02FormActivity : AppCompatActivity() {
 
-    private val viewModel : MainViewModel by lazy {
-        MainViewModel (SaveUserUseCase(UserDataRepository(XmlLocalDataSource(this))),
+    private val viewModel : Ex02ViewModel by lazy {
+        Ex02ViewModel (SaveUserUseCase(UserDataRepository(XmlLocalDataSource(this))),
             GetUserUseCase(UserDataRepository(XmlLocalDataSource(this))),
             DeleteUserUseCase(UserDataRepository(XmlLocalDataSource(this)))
         )
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupObservers (){
-        val observer = Observer<MainViewModel.UiState>{
+        val observer = Observer<Ex02ViewModel.UiState>{
             it.user?.apply {
                 visibleElements()
                 bindData(this)

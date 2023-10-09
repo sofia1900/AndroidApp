@@ -1,4 +1,4 @@
-package com.iesam.fomapp.data.local
+package com.iesam.fomapp.features.ex02.data.local
 
 import android.content.Context
 import com.google.gson.Gson
@@ -6,7 +6,7 @@ import com.iesam.fomapp.app.Either
 import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.app.left
 import com.iesam.fomapp.app.right
-import com.iesam.fomapp.domain.User
+import com.iesam.fomapp.features.ex02.domain.User
 
 class XmlLocalDataSource (private val context : Context){
 
