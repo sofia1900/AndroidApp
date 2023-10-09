@@ -17,6 +17,7 @@ class Ex01FormActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ex01_form)
+        setupView()
     }
 
     val viewModels : Ex01FormViewModel by lazy {
