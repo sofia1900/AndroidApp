@@ -9,14 +9,13 @@ import com.iesam.fomapp.features.ex01.domain.UserRepository
 
 
 class UserDataRepository (private val localDataSource: xmlLocalDataSource): UserRepository {
-    override fun save(input : SaveUserUseCase.Input): Either<ErrorApp, Boolean> {
+    override fun save(input: SaveUserUseCase.Input): Either<ErrorApp, Boolean> {
         return localDataSource.saveUser(input)
     }
 
     override fun get(): Either<ErrorApp, User> {
         return localDataSource.getUser()
     }
-
 
 }
 
