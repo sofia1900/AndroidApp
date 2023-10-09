@@ -1,7 +1,8 @@
-package com.iesam.androidtrainning.domain
+package com.iesam.fomapp.features.ex01.domain
 
-import com.iesam.androidtrainning.app.ErrorApp
-import com.iesam.kotlintrainning.Either
+import com.iesam.fomapp.app.Either
+import com.iesam.fomapp.app.ErrorApp
+
 
 interface UserRepository {
 

@@ -1,18 +1,19 @@
-package com.iesam.androidtrainning.presentation
+package com.iesam.fomapp.features.ex01.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.iesam.androidtrainning.app.ErrorApp
-import com.iesam.androidtrainning.domain.GetUserUseCase
-import com.iesam.androidtrainning.domain.SaveUserUseCase
-import com.iesam.androidtrainning.domain.User
+import com.iesam.fomapp.app.ErrorApp
+import com.iesam.fomapp.features.ex01.domain.GetUserUseCase
+import com.iesam.fomapp.features.ex01.domain.SaveUserUseCase
+import com.iesam.fomapp.features.ex01.domain.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MainViewModel (private val saveUserUseCase : SaveUserUseCase,
-                     private val getUserUseCase: GetUserUseCase) : ViewModel(){
+class Ex01FormViewModel (private val saveUserUseCase : SaveUserUseCase,
+                         private val getUserUseCase: GetUserUseCase
+) : ViewModel(){
 
     private val _uiState = MutableLiveData<UiState>()
     val uiState : LiveData<UiState> = _uiState

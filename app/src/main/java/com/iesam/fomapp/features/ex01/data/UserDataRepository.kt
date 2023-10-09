@@ -1,11 +1,12 @@
-package com.iesam.androidtrainning.data
+package com.iesam.fomapp.features.ex01.data
 
-import com.iesam.androidtrainning.app.ErrorApp
-import com.iesam.androidtrainning.data.local.xmlLocalDataSource
-import com.iesam.androidtrainning.domain.SaveUserUseCase
-import com.iesam.androidtrainning.domain.User
-import com.iesam.androidtrainning.domain.UserRepository
-import com.iesam.kotlintrainning.Either
+import com.iesam.fomapp.app.Either
+import com.iesam.fomapp.app.ErrorApp
+import com.iesam.fomapp.features.ex01.data.local.xmlLocalDataSource
+import com.iesam.fomapp.features.ex01.domain.SaveUserUseCase
+import com.iesam.fomapp.features.ex01.domain.User
+import com.iesam.fomapp.features.ex01.domain.UserRepository
+
 
 class UserDataRepository (private val localDataSource: xmlLocalDataSource): UserRepository {
     override fun save(input : SaveUserUseCase.Input): Either<ErrorApp, Boolean> {
@@ -18,3 +19,4 @@ class UserDataRepository (private val localDataSource: xmlLocalDataSource): User
 
 
 }
+

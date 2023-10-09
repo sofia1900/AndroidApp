@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_name01" />
+
+
+    <EditText
+        android:id="@+id/input_name01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_surname01" />
+
+
+    <EditText
+        android:id="@+id/input_surname01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_age01" />
+
+    <EditText
+        android:id="@+id/input_age01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/action_save01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/action_save01" />
+
+    <Button
+        android:id="@+id/action_get01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/action_get01" />
+
+    <Button
+        android:id="@+id/action_clean01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/action_clean01" />
+
+
+</LinearLayout>

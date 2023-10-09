@@ -1,4 +1,13 @@
 <resources>
+    <string name="app_name01">AndroidTrainning</string>
+    <string name="label_name01">Nombre</string>
+    <string name="label_surname01">Apellidos</string>
+    <string name="label_date_born01">Edad</string>
+    <string name="label_age01">Edad</string>
+    <string name="action_save01">Guardar</string>
+    <string name="action_get01">Recuperar</string>
+    <string name="action_clean01">Limpiar</string>
+
     <string name="app_name">FomApp</string>
     <string name="label_name">Nombre</string>
     <string name="label_surname">Apellidos</string>

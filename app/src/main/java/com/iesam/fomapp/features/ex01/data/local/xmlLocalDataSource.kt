@@ -1,12 +1,13 @@
-package com.iesam.androidtrainning.data.local
+package com.iesam.fomapp.features.ex01.data.local
 
 import android.content.Context
-import com.iesam.androidtrainning.app.ErrorApp
-import com.iesam.androidtrainning.domain.SaveUserUseCase
-import com.iesam.androidtrainning.domain.User
-import com.iesam.kotlintrainning.Either
-import com.iesam.kotlintrainning.left
-import com.iesam.kotlintrainning.right
+import com.iesam.fomapp.app.Either
+import com.iesam.fomapp.app.ErrorApp
+import com.iesam.fomapp.app.left
+import com.iesam.fomapp.app.right
+import com.iesam.fomapp.features.ex01.domain.SaveUserUseCase
+import com.iesam.fomapp.features.ex01.domain.User
+
 
 class xmlLocalDataSource (private val context : Context){
                                                           //nombre del fichero
