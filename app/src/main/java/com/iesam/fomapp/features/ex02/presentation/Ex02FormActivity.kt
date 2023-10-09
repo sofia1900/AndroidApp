@@ -19,17 +19,19 @@ import com.iesam.fomapp.features.ex02.domain.useCases.SaveUserUseCase
 
 class Ex02FormActivity : AppCompatActivity() {
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_ex02_form)
+        setupView()
+    }
+
+
     private val viewModel : Ex02ViewModel by lazy {
         Ex02ViewModel (SaveUserUseCase(UserDataRepository(XmlLocalDataSource(this))),
             GetUserUseCase(UserDataRepository(XmlLocalDataSource(this))),
             DeleteUserUseCase(UserDataRepository(XmlLocalDataSource(this)))
         )
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setupView()
     }
 
     private fun setupView (){

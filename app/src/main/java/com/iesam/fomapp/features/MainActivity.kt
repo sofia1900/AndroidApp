@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.iesam.fomapp.R
 import com.iesam.fomapp.features.ex02.presentation.Ex02FormActivity
-import java.text.Normalizer.Form
+import com.iesam.fomapp.features.ex03.presentation.Ex03Activity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,8 +15,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupView (){
+
+        findViewById<Button>(R.id.action_01Form).setOnClickListener {
+            startActivity(Intent(this, Ex03Activity::class.java))
+        }
+
         findViewById<Button>(R.id.action_02Form).setOnClickListener {
             startActivity(Intent(this, Ex02FormActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.action_03Form).setOnClickListener {
+
         }
     }
 }

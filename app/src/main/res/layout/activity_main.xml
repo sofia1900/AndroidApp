@@ -4,15 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".features.ex02.presentation.Ex02FormActivity"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context=".features.ex02.presentation.Ex02FormActivity">
+
+    <Button
+        android:id="@+id/action_01Form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="@string/action_01_form" />
 
     <Button
         android:id="@+id/action_02Form"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/action_02_form"
         android:layout_gravity="center"
-        android:layout_margin="20dp"/>
+        android:layout_margin="20dp"
+        android:text="@string/action_02_form" />
+
+    <Button
+        android:id="@+id/action_03Form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="@string/action_03_form" />
 
 </LinearLayout>
