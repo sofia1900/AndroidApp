@@ -3,10 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".features.ex02.presentation.Ex02FormActivity"
-    android:orientation="vertical"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="40dp">
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/action_02Form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/action_02_form"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"/>
 
 </LinearLayout>

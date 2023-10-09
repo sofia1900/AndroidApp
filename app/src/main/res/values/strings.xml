@@ -5,6 +5,15 @@
     <string name="action_save">Guardar</string>
     <string name="action_clean">Limpiar</string>
     <string name="action_delete">Eliminar</string>
+
+    <string name="action_02_form">Ejercicio02 Form</string>
+
+
+    <string name="label_text01">-15%</string>
+    <string name="label_text02">Burger It</string>
+
+
+
 </resources>
 
 
