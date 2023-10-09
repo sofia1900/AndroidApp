@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupView()
     }
 
     private fun setupView (){
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.action_03Form).setOnClickListener {
-
+            startActivity(Intent(this, Ex03Activity::class.java))
         }
     }
 }

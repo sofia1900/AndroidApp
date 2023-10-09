@@ -6,15 +6,17 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
+        android:layout_height="230dp"
         android:background="@drawable/burguer"
         android:id="@+id/pather2" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/orange"
             android:text="@string/label_text01"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             android:padding="10dp"
             android:textSize="25dp"
             android:layout_alignParentEnd="true"
@@ -25,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/label_text02"
+            android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="35dp"/>
 
@@ -37,20 +40,16 @@
         android:layout_below="@id/pather2"
         android:layout_marginTop="10dp">
 
-
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="98%"
-            android:textSize="20dp" />
+            android:src="@drawable/img1"/>
 
-
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="20-30 min"
-            android:textSize="20dp" />
+            android:src="@drawable/img2"
+            android:layout_alignParentEnd="true"/>
 
 
     </RelativeLayout>

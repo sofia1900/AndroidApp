@@ -8,11 +8,19 @@
     tools:context=".features.ex02.presentation.Ex02FormActivity">
 
     <Button
-        android:id="@+id/action_3_1"
+    android:id="@+id/action_3_1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="20dp"
+    android:text="@string/action_3_1" />
+
+    <Button
+        android:id="@+id/action_3_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:text="@string/action_3_1" />
+        android:text="@string/action_3_2" />
 
 </LinearLayout>

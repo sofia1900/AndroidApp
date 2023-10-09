@@ -11,11 +11,16 @@
     <string name="action_03_form">Ejercicio 03 Form</string>
 
 
-    <string name="action_3_1">Vista Hamburguesa</string>
+    <string name="action_3_1">Vista 1 Hamburguesa</string>
+    <string name="action_3_2">Vista 2 Chat</string>
 
 
     <string name="label_text01">-15%</string>
     <string name="label_text02">Burger It</string>
+
+
+    <string name="label_chat1Name">Fin de semana</string>
+    <string name="label_chat1Time">9:49</string>
 
 
 </resources>
