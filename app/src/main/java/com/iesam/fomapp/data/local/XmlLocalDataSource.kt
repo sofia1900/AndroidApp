@@ -40,21 +40,7 @@ class XmlLocalDataSource (private val context : Context){
 
     fun deleteUserById (userId : Int) : Either<ErrorApp, Boolean>{
         return try{
-            //1. Recuperar todos los usuarios en una lista
-            val mapUser : MutableMap<String, String> = sharedPref.all as MutableMap<String, String>
-
-            //2. Eliminar el usuario de la lista
-            if (mapUser.containsKey(userId.toString())){
-                mapUser.remove(userId.toString())
-            }
-
-            sharedPref.edit().remove("users").commit()
-
-            //3. Serializar usuario a usuario y guardarlo en el mxl
-            for (key in mapUser.keys) {
-
-            }
-
+            sharedPref.edit().remove(userId.toString()).apply()
             true.right()
         }catch (ex : Exception){
             return ErrorApp.UnknowError.left()
