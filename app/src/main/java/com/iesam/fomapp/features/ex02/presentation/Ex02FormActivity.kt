@@ -38,7 +38,7 @@ class Ex02FormActivity : AppCompatActivity() {
     private fun setupView (){
         val actionButtonSave = findViewById<Button>(R.id.action_save)
         actionButtonSave.setOnClickListener {
-            val idUser = viewModel.saveUser(getNameInput(), getSurnameInput()) //GUARDO LOS DATOS
+            val idUser = viewModel.saveUser(getNameInput(), getSurnameInput()) //GUARDO LOS DATOS y recojo el id almacenado
             getUser(idUser) //Recuperar datos y pintar
         }
 
@@ -53,7 +53,7 @@ class Ex02FormActivity : AppCompatActivity() {
             cleanText()
             invisibleButtomDelete1()
             //ELIMINAR DE LOCAL
-            val idUser = findViewById<EditText>(R.id.input_id1).text.toString().toInt()
+            val idUser = findViewById<TextView>(R.id.label_id1).text.toString().toInt()
             viewModel.deleteUser(idUser)
         }
 
@@ -89,14 +89,14 @@ class Ex02FormActivity : AppCompatActivity() {
 
 
     private fun setNameInput (name : String){
-        findViewById<TextView>(R.id.text_name1).setText(name)
+        findViewById<TextView>(R.id.label_name1).setText(name)
     }
 
     private fun setSurnameInput (surname : String){
-        findViewById<TextView>(R.id.text_surname1).setText(surname)
+        findViewById<TextView>(R.id.label_surname1).setText(surname)
     }
     private fun setIdInput (id : Int){
-        findViewById<TextView>(R.id.input_id1).setText(id.toString())
+        findViewById<TextView>(R.id.label_id1).setText(id.toString())
     }
 
     private fun cleanInput () {
@@ -105,8 +105,8 @@ class Ex02FormActivity : AppCompatActivity() {
     }
 
     private fun cleanText (){
-        findViewById<TextView>(R.id.text_name1).setText("")
-        findViewById<TextView>(R.id.text_surname1).setText("")
+        findViewById<TextView>(R.id.label_name1).setText("")
+        findViewById<TextView>(R.id.label_surname1).setText("")
     }
 
     private fun visibleButtomDelete1 (){

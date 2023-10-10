@@ -58,64 +58,64 @@
 
 
         <TextView
-            android:id="@+id/text_nameTittle"
+            android:id="@+id/label_nameTittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_name"
             android:layout_marginEnd="30dp"/>
 
         <TextView
-            android:id="@+id/text_surnameTittle"
+            android:id="@+id/label_surnameTittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/text_nameTittle"
+            android:layout_toRightOf="@id/label_nameTittle"
             android:text="@string/label_surname"
             android:layout_marginEnd="30dp"/>
 
 
         <TextView
-            android:id="@+id/text_name1"
+            android:id="@+id/label_name1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/text_nameTittle"
-            android:layout_alignStart="@id/text_nameTittle"/>
+            android:layout_below="@id/label_nameTittle"
+            android:layout_alignStart="@id/label_nameTittle"/>
 
         <TextView
-            android:id="@+id/text_surname1"
+            android:id="@+id/label_surname1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/text_surnameTittle"
-            android:layout_alignStart="@id/text_surnameTittle"/>
+            android:layout_below="@id/label_surnameTittle"
+            android:layout_alignStart="@id/label_surnameTittle"/>
 
         <Button
             android:id="@+id/action_delete1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/text_surnameTittle"
+            android:layout_below="@id/label_surnameTittle"
             android:layout_alignParentEnd="true"
             android:text="@string/action_delete"
             android:visibility="invisible"/>
 
         <TextView
-            android:id="@+id/input_id1"
+            android:id="@+id/label_id1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"/>
 
 
         <TextView
-            android:id="@+id/text_name2"
+            android:id="@+id/label_name2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/text_name1"
-            android:layout_alignStart="@id/text_name1"/>
+            android:layout_below="@id/label_name1"
+            android:layout_alignStart="@id/label_name1"/>
 
         <TextView
-            android:id="@+id/text_surname2"
+            android:id="@+id/label_surname2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/text_surname1"
-            android:layout_alignStart="@id/text_surname1"/>
+            android:layout_below="@id/label_surname1"
+            android:layout_alignStart="@id/label_surname1"/>
 
         <Button
             android:id="@+id/action_delete2"
@@ -127,7 +127,7 @@
             android:visibility="invisible"/>
 
         <TextView
-            android:id="@+id/input_id2"
+            android:id="@+id/label_id2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"/>
