@@ -38,8 +38,7 @@ class Ex02FormActivity : AppCompatActivity() {
     private fun setupView (){
         val actionButtonSave = findViewById<Button>(R.id.action_save)
         actionButtonSave.setOnClickListener {
-            val idUser : Int = viewModel.saveUser(getNameInput(), getSurnameInput()) //GUARDO LOS DATOS -- recojo el id creado
-            Log.d("@dev", idUser.toString())
+            val idUser = viewModel.saveUser(getNameInput(), getSurnameInput()) //GUARDO LOS DATOS
             getUser(idUser) //Recuperar datos y pintar
         }
 
@@ -54,7 +53,8 @@ class Ex02FormActivity : AppCompatActivity() {
             cleanText()
             invisibleButtomDelete1()
             //ELIMINAR DE LOCAL
-            //viewModel.deleteUser()
+            val idUser = findViewById<EditText>(R.id.input_id1).text.toString().toInt()
+            viewModel.deleteUser(idUser)
         }
 
     }
@@ -77,6 +77,7 @@ class Ex02FormActivity : AppCompatActivity() {
     private fun bindData(user : User){
         setNameInput(user.name)
         setSurnameInput(user.surname)
+        setIdInput(user.id)
     }
 
     private fun getNameInput(): String =
@@ -94,6 +95,9 @@ class Ex02FormActivity : AppCompatActivity() {
     private fun setSurnameInput (surname : String){
         findViewById<TextView>(R.id.text_surname1).setText(surname)
     }
+    private fun setIdInput (id : Int){
+        findViewById<TextView>(R.id.input_id1).setText(id.toString())
+    }
 
     private fun cleanInput () {
         findViewById<EditText>(R.id.input_name).setText("")
@@ -106,9 +110,9 @@ class Ex02FormActivity : AppCompatActivity() {
     }
 
     private fun visibleButtomDelete1 (){
-        findViewById<LinearLayout>(R.id.action_delete1).visibility = View.VISIBLE
+        findViewById<Button>(R.id.action_delete1).visibility = View.VISIBLE
     }
     private fun invisibleButtomDelete1 (){
-        findViewById<LinearLayout>(R.id.action_delete1).visibility = View.INVISIBLE
+        findViewById<Button>(R.id.action_delete1).visibility = View.INVISIBLE
     }
 }

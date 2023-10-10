@@ -10,7 +10,7 @@ import com.iesam.fomapp.features.ex02.domain.User
 
 class XmlLocalDataSource (private val context : Context){
 
-    private val sharedPref = context.getSharedPreferences("users3", Context.MODE_PRIVATE)
+    private val sharedPref = context.getSharedPreferences("users02", Context.MODE_PRIVATE)
 
     //https://developer.android.com/training/data-storage/shared-preferences?hl=es-419
 
@@ -23,7 +23,6 @@ class XmlLocalDataSource (private val context : Context){
                 val jsonUser = gson.toJson(user, User::class.java) //JSON
                 putString(id.toString(), jsonUser) //Guardar
                 apply()
-
                 id.right()
             }
         }catch (ex : Exception){
