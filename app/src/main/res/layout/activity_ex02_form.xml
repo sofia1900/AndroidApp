@@ -77,6 +77,6 @@
     <include android:id="@+id/row_2" layout="@layout/view02_row_list" />
     <include android:id="@+id/row_3" layout="@layout/view02_row_list" />
     <include android:id="@+id/row_4" layout="@layout/view02_row_list" />
-    <include android:id="@+id/row_4" layout="@layout/view02_row_list" />
+    <include android:id="@+id/row_5" layout="@layout/view02_row_list" />
 
 </LinearLayout>

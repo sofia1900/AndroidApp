@@ -26,19 +26,17 @@ class Ex02FormActivity : AppCompatActivity() {
 
     val gson = Gson()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ex02_form)
-        setupView()
-    }
-
-
     private val viewModel : Ex02ViewModel by lazy {
         Ex02ViewModel (SaveUserUseCase(UserDataRepository(XmlLocalDataSource(this))),
             GetUserUseCase(UserDataRepository(XmlLocalDataSource(this))),
             DeleteUserUseCase(UserDataRepository(XmlLocalDataSource(this))),
             FindAllUsersUseCase(UserDataRepository(XmlLocalDataSource(this)))
         )
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_ex02_form)
+        setupView()
     }
 
     private fun setupView (){
@@ -47,7 +45,6 @@ class Ex02FormActivity : AppCompatActivity() {
         val actionButtonSave = findViewById<Button>(R.id.action_save)
         actionButtonSave.setOnClickListener {
             viewModel.saveUser(getNameInput(), getSurnameInput()) //GUARDO LOS DATOS
-            //getUser(idUser) //Recuperar datos y pintar UN usuario
             getUsers()
         }
 
@@ -57,27 +54,36 @@ class Ex02FormActivity : AppCompatActivity() {
             cleanInput()
         }
 
-        //BUTTOM
+        //DELETE
         val row1 = findViewById<ViewGroup>(R.id.row_1)
         val actionButtonDelete1 = row1.findViewById<Button>(R.id.action_delete)
         actionButtonDelete1.setOnClickListener {
-            //ELIMINAR DE LA PANTALLA
-            cleanText(row1)
-            invisibleButtomDelete(row1)
-            //ELIMINAR DE LOCAL
-            val idUser = row1.findViewById<TextView>(R.id.label_id).text.toString().toInt()
-            viewModel.deleteUser(idUser)
+            cleanView(row1)
+            deleteUser(row1)
         }
-
         val row2 = findViewById<ViewGroup>(R.id.row_2)
         val actionButtonDelete2 = row2.findViewById<Button>(R.id.action_delete)
         actionButtonDelete2.setOnClickListener {
-            //ELIMINAR DE LA PANTALLA
-            cleanText(row2)
-            invisibleButtomDelete(row2)
-            //ELIMINAR DE LOCAL
-            val idUser = row2.findViewById<TextView>(R.id.label_id).text.toString().toInt()
-            viewModel.deleteUser(idUser)
+            cleanView(row2)
+            deleteUser(row2)
+        }
+        val row3 = findViewById<ViewGroup>(R.id.row_3)
+        val actionButtonDelete3 = row3.findViewById<Button>(R.id.action_delete)
+        actionButtonDelete2.setOnClickListener {
+            cleanView(row3)
+            deleteUser(row3)
+        }
+        val row4 = findViewById<ViewGroup>(R.id.row_4)
+        val actionButtonDelete4 = row4.findViewById<Button>(R.id.action_delete)
+        actionButtonDelete2.setOnClickListener {
+            cleanView(row4)
+            deleteUser(row4)
+        }
+        val row5 = findViewById<ViewGroup>(R.id.row_5)
+        val actionButtonDelete5 = row5.findViewById<Button>(R.id.action_delete)
+        actionButtonDelete2.setOnClickListener {
+            cleanView(row5)
+            deleteUser(row5)
         }
 
     }
@@ -95,30 +101,55 @@ class Ex02FormActivity : AppCompatActivity() {
         }
         viewModel.uiState.observe(this, observer)
     }
-
     private fun bindData (mapUsers : Map<String, String>){
         val users = mapUsers.values.map{
             gson.fromJson(it, User::class.java)
         }
 
         if (users.size == 1){
-            val row = findViewById<ViewGroup>(R.id.row_1)
-            row.findViewById<TextView>(R.id.label_name).setText(users.get(0).name)
-            row.findViewById<TextView>(R.id.label_surname).setText(users.get(0).surname)
-            row.findViewById<Button>(R.id.action_delete).visibility = View.VISIBLE
+            updatRow1(users)
         }else if (users.size == 2){
-            val row1 = findViewById<ViewGroup>(R.id.row_1)
-            row1.findViewById<TextView>(R.id.label_name).setText(users.get(0).name)
-            row1.findViewById<TextView>(R.id.label_surname).setText(users.get(0).surname)
-            row1.findViewById<Button>(R.id.action_delete).visibility = View.VISIBLE
-
-            val row2 = findViewById<ViewGroup>(R.id.row_2)
-            row2.findViewById<TextView>(R.id.label_name).setText(users.get(0).name)
-            row2.findViewById<TextView>(R.id.label_surname).setText(users.get(0).surname)
-            row2.findViewById<Button>(R.id.action_delete).visibility = View.VISIBLE
+            updatRow1(users)
+            updateRow2(users)
+        }else if (users.size == 3) {
+            updatRow1(users)
+            updateRow2(users)
+            updateRow3(users)
         }
     }
 
+    private fun deleteUser (row : ViewGroup){
+        val idUser = row.findViewById<TextView>(R.id.label_id).text.toString().toInt()
+        viewModel.deleteUser(idUser)
+    }
+
+    private fun updatRow1 (users : List<User>){
+        val row = findViewById<ViewGroup>(R.id.row_1)
+        updateRow(row, users)
+    }
+    private fun updateRow2 (users : List<User>){
+        val row = findViewById<ViewGroup>(R.id.row_2)
+        updateRow(row, users)
+    }
+    private fun updateRow3 (users : List<User>){
+        val row = findViewById<ViewGroup>(R.id.row_3)
+        updateRow(row, users)
+    }
+    private fun updateRow4 (users : List<User>){
+        val row = findViewById<ViewGroup>(R.id.row_4)
+        updateRow(row, users)
+    }
+    private fun updateRow5 (users : List<User>){
+        val row = findViewById<ViewGroup>(R.id.row_5)
+        updateRow(row, users)
+    }
+
+    private fun updateRow (row : ViewGroup, users : List<User>){
+        row.findViewById<TextView>(R.id.label_name).setText(users.get(1).name)
+        row.findViewById<TextView>(R.id.label_surname).setText(users.get(1).surname)
+        row.findViewById<TextView>(R.id.label_id).setText(users.get(1).id.toString())
+        row.findViewById<Button>(R.id.action_delete).visibility = View.VISIBLE
+    }
 
     private fun getNameInput(): String =
         findViewById<EditText>(R.id.input_name).text.toString()
@@ -126,14 +157,16 @@ class Ex02FormActivity : AppCompatActivity() {
     private fun getSurnameInput(): String =
         findViewById<EditText>(R.id.input_surname).text.toString()
 
-
     private fun cleanInput () {
         findViewById<EditText>(R.id.input_name).setText("")
         findViewById<EditText>(R.id.input_surname).setText("")
     }
 
-
-    private fun cleanText (row : ViewGroup ){
+    private fun cleanView(row : ViewGroup){
+        cleanText(row)
+        invisibleButtomDelete(row)
+    }
+    private fun cleanText (row : ViewGroup){
         row.findViewById<TextView>(R.id.label_name).setText("")
         row.findViewById<TextView>(R.id.label_surname).setText("")
     }
