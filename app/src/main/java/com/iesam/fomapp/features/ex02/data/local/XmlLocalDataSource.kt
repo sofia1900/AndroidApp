@@ -15,7 +15,7 @@ class XmlLocalDataSource (private val context : Context){
     //https://developer.android.com/training/data-storage/shared-preferences?hl=es-419
 
     private val gson = Gson()
-    fun saveUser(name : String, surname : String) : Either<ErrorApp, Int> {
+    fun saveUser(name : String, surname : String) : Either<ErrorApp, Boolean> {
         return try{
             with(sharedPref.edit()){
                 val id : Int = (1..100).random()
@@ -23,8 +23,8 @@ class XmlLocalDataSource (private val context : Context){
                 val jsonUser = gson.toJson(user, User::class.java) //JSON
                 putString(id.toString(), jsonUser) //Guardar
                 apply()
-                id.right()
             }
+            true.right()
         }catch (ex : Exception){
             return ErrorApp.UnknowError.left()
         }
@@ -36,6 +36,11 @@ class XmlLocalDataSource (private val context : Context){
         } catch (ex: Exception) {
             return ErrorApp.UnknowError.left()
         }
+    }
+
+    fun findAll () : Either<ErrorApp, Map<String, String>>{
+        val users = sharedPref.all as Map<String, String>
+        return users.right()
     }
 
     fun deleteUserById (userId : Int) : Either<ErrorApp, Boolean>{

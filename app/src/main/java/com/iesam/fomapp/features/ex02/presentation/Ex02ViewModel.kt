@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.features.ex02.domain.User
 import com.iesam.fomapp.features.ex02.domain.useCases.DeleteUserUseCase
+import com.iesam.fomapp.features.ex02.domain.useCases.FindAllUsersUseCase
 import com.iesam.fomapp.features.ex02.domain.useCases.GetUserUseCase
 import com.iesam.fomapp.features.ex02.domain.useCases.SaveUserUseCase
 import kotlinx.coroutines.Dispatchers
@@ -15,25 +16,34 @@ import kotlinx.coroutines.launch
 
 class Ex02ViewModel (private val saveUserUseCase: SaveUserUseCase,
                      private val getUserUseCase: GetUserUseCase,
-                     private val deleteUserUseCase: DeleteUserUseCase
+                     private val deleteUserUseCase: DeleteUserUseCase,
+                     private val findAllUsersUseCase: FindAllUsersUseCase
 ) :  ViewModel() {
 
     private val _uiState = MutableLiveData<UiState>()
     val uiState: LiveData<UiState> = _uiState
 
-    fun saveUser (name : String, surname : String) : Int {
+    fun saveUser (name : String, surname : String){
         saveUserUseCase(name, surname).fold(
-            {return responseErrorSaveUser(it) },
-            { return responseSuccessSaveUser(it) }
+            {return responseError(it) },
+            { return responseSuccess(it) }
         )
     }
-
 
     fun getUser (idUser : Int) {
         viewModelScope.launch(Dispatchers.IO) {
             getUserUseCase(idUser).fold(
                 {responseError(it) },
                 { responseGetUserSuccess(it) }
+            )
+        }
+    }
+
+    fun getUsers (){
+        viewModelScope.launch(Dispatchers.IO) {
+            findAllUsersUseCase().fold(
+                {responseError(it) },
+                { responseFindAllUsersSuccess(it) }
             )
         }
     }
@@ -51,22 +61,19 @@ class Ex02ViewModel (private val saveUserUseCase: SaveUserUseCase,
     private fun responseSuccess(ok : Boolean) {
     }
 
-    private fun responseErrorSaveUser(errorApp: ErrorApp) : Int {
-        return -1
-    }
-
-    private fun responseSuccessSaveUser (idUser : Int) : Int{
-        return idUser
-    }
-
     private fun responseGetUserSuccess (user : User){
         _uiState.postValue(UiState(user = user))
+    }
+
+    private fun responseFindAllUsersSuccess (allUsers : Map<String, String>){
+        _uiState.postValue(UiState(mapUsers = allUsers))
     }
 
     data class UiState(
         val errorApp: ErrorApp? = null,
         val isLoading: Boolean = false,
-        val user: User? = null
+        val user: User? = null,
+        val mapUsers : Map<String, String>? = null
     )
 
 }
