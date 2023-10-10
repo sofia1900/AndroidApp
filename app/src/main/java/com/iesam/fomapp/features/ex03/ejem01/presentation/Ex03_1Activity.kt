@@ -27,7 +27,8 @@ class Ex03_1Activity : AppCompatActivity() {
     }
 
     private fun getBurger(){
-
+        setupObserver()
+        viewModel.getUser()
     }
 
     private fun setupObserver (){
