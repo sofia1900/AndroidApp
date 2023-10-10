@@ -7,7 +7,7 @@ import com.iesam.fomapp.features.ex02.domain.User
 import com.iesam.fomapp.features.ex02.domain.UserRepository
 
 class UserDataRepository (private val localDataSource: XmlLocalDataSource): UserRepository {
-    override fun saveUser(name: String, surname: String): Either<ErrorApp, Boolean>{
+    override fun saveUser(name: String, surname: String): Either<ErrorApp, Int>{
         return localDataSource.saveUser(name, surname)
     }
 

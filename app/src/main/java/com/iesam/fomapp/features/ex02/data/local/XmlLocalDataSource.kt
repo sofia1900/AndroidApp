@@ -10,21 +10,22 @@ import com.iesam.fomapp.features.ex02.domain.User
 
 class XmlLocalDataSource (private val context : Context){
 
-    private val sharedPref = context.getSharedPreferences("users", Context.MODE_PRIVATE)
+    private val sharedPref = context.getSharedPreferences("users3", Context.MODE_PRIVATE)
 
     //https://developer.android.com/training/data-storage/shared-preferences?hl=es-419
 
     private val gson = Gson()
-    fun saveUser(name : String, surname : String) : Either<ErrorApp, Boolean> {
+    fun saveUser(name : String, surname : String) : Either<ErrorApp, Int> {
         return try{
             with(sharedPref.edit()){
                 val id : Int = (1..100).random()
                 val user = User (id, name, surname)
-                val jsonUser = gson.toJson(user, User::class.java)
-                putString(id.toString(), jsonUser)
+                val jsonUser = gson.toJson(user, User::class.java) //JSON
+                putString(id.toString(), jsonUser) //Guardar
                 apply()
+
+                id.right()
             }
-            true.right()
         }catch (ex : Exception){
             return ErrorApp.UnknowError.left()
         }
@@ -32,7 +33,7 @@ class XmlLocalDataSource (private val context : Context){
     fun getUserById(userId : Int): Either<ErrorApp, User> {
         return try {
            val jsonUser = sharedPref.getString(userId.toString(), "{}")
-           return gson.fromJson(jsonUser, User ::class.java).right()
+           return gson.fromJson(jsonUser, User ::class.java).right()  //deserializar
         } catch (ex: Exception) {
             return ErrorApp.UnknowError.left()
         }

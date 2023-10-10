@@ -2,6 +2,7 @@ package com.iesam.fomapp.features.ex02.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -37,8 +38,9 @@ class Ex02FormActivity : AppCompatActivity() {
     private fun setupView (){
         val actionButtonSave = findViewById<Button>(R.id.action_save)
         actionButtonSave.setOnClickListener {
-            viewModel.saveUser(getNameInput(), getSurnameInput()) //GUARDO LOS DATOS
-            getUser()
+            val idUser : Int = viewModel.saveUser(getNameInput(), getSurnameInput()) //GUARDO LOS DATOS -- recojo el id creado
+            Log.d("@dev", idUser.toString())
+            getUser(idUser) //Recuperar datos y pintar
         }
 
         val actionButtonClean = findViewById<Button>(R.id.action_clean)
@@ -50,22 +52,22 @@ class Ex02FormActivity : AppCompatActivity() {
         actionButtonDelete.setOnClickListener {
             //ELIMINAR DE LA PANTALLA
             cleanText()
-            invisibleElements()
+            invisibleButtomDelete1()
             //ELIMINAR DE LOCAL
             //viewModel.deleteUser()
         }
 
     }
 
-    private fun getUser (){
+    private fun getUser (idUser : Int){
         setupObservers() //SUSCRIPCION
-        //viewModel.getUser() //EJECUTO EL HILO SECUNDARIO PARA RECOGER LA INFORMACION
+        viewModel.getUser(idUser) //EJECUTO EL HILO SECUNDARIO PARA RECOGER LA INFORMACION
     }
 
     private fun setupObservers (){
         val observer = Observer<Ex02ViewModel.UiState>{
-            it.user?.apply {
-                visibleElements()
+            it.user?.apply {//Hacer cuando sea avisado
+                visibleButtomDelete1()
                 bindData(this)
             }
         }
@@ -77,9 +79,13 @@ class Ex02FormActivity : AppCompatActivity() {
         setSurnameInput(user.surname)
     }
 
-    private fun visibleElements (){
-        findViewById<LinearLayout>(R.id.linear1).visibility = View.VISIBLE
-    }
+    private fun getNameInput(): String =
+        findViewById<EditText>(R.id.input_name).text.toString()
+
+    private fun getSurnameInput(): String =
+        findViewById<EditText>(R.id.input_surname).text.toString()
+
+
 
     private fun setNameInput (name : String){
         findViewById<TextView>(R.id.text_name1).setText(name)
@@ -88,13 +94,6 @@ class Ex02FormActivity : AppCompatActivity() {
     private fun setSurnameInput (surname : String){
         findViewById<TextView>(R.id.text_surname1).setText(surname)
     }
-
-    private fun getNameInput(): String =
-        findViewById<EditText>(R.id.input_name).text.toString()
-
-    private fun getSurnameInput(): String =
-        findViewById<EditText>(R.id.input_surname).text.toString()
-
 
     private fun cleanInput () {
         findViewById<EditText>(R.id.input_name).setText("")
@@ -106,7 +105,10 @@ class Ex02FormActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.text_surname1).setText("")
     }
 
-    private fun invisibleElements(){
-        findViewById<LinearLayout>(R.id.linear1).visibility = View.GONE
+    private fun visibleButtomDelete1 (){
+        findViewById<LinearLayout>(R.id.action_delete1).visibility = View.VISIBLE
+    }
+    private fun invisibleButtomDelete1 (){
+        findViewById<LinearLayout>(R.id.action_delete1).visibility = View.INVISIBLE
     }
 }

@@ -20,10 +20,10 @@ class Ex02ViewModel (private val saveUserUseCase: SaveUserUseCase,
     private val _uiState = MutableLiveData<UiState>()
     val uiState: LiveData<UiState> = _uiState
 
-    fun saveUser (name : String, surname : String){
+    fun saveUser (name : String, surname : String) : Int {
         saveUserUseCase(name, surname).fold(
-            {responseError(it)},
-            {responseSuccess(it)}
+            {return responseErrorSaveUser(it)},
+            {return responseSuccessSaveUser(it)}
         )
     }
 
@@ -47,7 +47,14 @@ class Ex02ViewModel (private val saveUserUseCase: SaveUserUseCase,
     private fun responseError(errorApp: ErrorApp) {
     }
 
-    private fun responseSuccess(isOk: Boolean) {
+    private fun responseErrorSaveUser(errorApp: ErrorApp) : Int{
+        return -1
+    }
+    private fun responseSuccessSaveUser(userId : Int) : Int{
+        return userId
+    }
+
+    private fun responseSuccess(ok : Boolean) {
     }
 
     private fun responseGetUserSuccess (user : User){

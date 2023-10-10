@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".features.ex02.presentation.Ex02FormActivity"
     android:orientation="vertical"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="40dp">
+    android:layout_margin="20dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,96 +51,87 @@
     </LinearLayout>
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginLeft="10dp">
 
 
         <TextView
+            android:id="@+id/text_nameTittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_name"
-            android:layout_marginRight="50dp"/>
+            android:layout_marginEnd="30dp"/>
 
         <TextView
-            android:layout_width="80dp"
+            android:id="@+id/text_surnameTittle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/text_nameTittle"
             android:text="@string/label_surname"
-            android:layout_marginRight="50dp"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="10dp"
-        android:visibility="invisible" >
+            android:layout_marginEnd="30dp"/>
 
 
         <TextView
             android:id="@+id/text_name1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="50dp"/>
+            android:layout_below="@id/text_nameTittle"
+            android:layout_alignStart="@id/text_nameTittle"/>
 
         <TextView
             android:id="@+id/text_surname1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="80dp"/>
+            android:layout_below="@id/text_surnameTittle"
+            android:layout_alignStart="@id/text_surnameTittle"/>
 
         <Button
             android:id="@+id/action_delete1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/action_delete"/>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/input_id1"
+            android:layout_below="@id/text_surnameTittle"
+            android:layout_alignParentEnd="true"
+            android:text="@string/action_delete"
             android:visibility="invisible"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="10dp"
-        android:visibility="invisible" >
+        <EditText
+            android:id="@+id/input_id1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
 
 
         <TextView
             android:id="@+id/text_name2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="50dp"/>
+            android:layout_below="@id/text_name1"
+            android:layout_alignStart="@id/text_name1"/>
 
         <TextView
             android:id="@+id/text_surname2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="80dp"/>
+            android:layout_below="@id/text_surname1"
+            android:layout_alignStart="@id/text_surname1"/>
 
         <Button
             android:id="@+id/action_delete2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/action_delete"/>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/input_id2"
+            android:layout_below="@id/action_delete1"
+            android:layout_alignParentEnd="true"
+            android:text="@string/action_delete"
             android:visibility="invisible"/>
 
-    </LinearLayout>
+        <EditText
+            android:id="@+id/input_id2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

@@ -6,7 +6,7 @@ import com.iesam.fomapp.features.ex02.domain.UserRepository
 
 class SaveUserUseCase (private val userRepository: UserRepository){
 
-     operator fun invoke (name : String, surname : String) : Either<ErrorApp, Boolean> {
+     operator fun invoke (name : String, surname : String) : Either<ErrorApp, Int> {
         return userRepository.saveUser(name, surname)
     }
 }
