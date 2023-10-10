@@ -19,7 +19,7 @@
             android:name=".features.ex03.presentation.Ex03_2Activity"
             android:exported="false" />
         <activity
-            android:name=".features.ex03.presentation.Ex03_1Activity"
+            android:name=".features.ex03.ejem01.presentation.Ex03_1Activity"
             android:exported="false" />
         <activity
             android:name=".features.ex03.presentation.Ex03Activity"

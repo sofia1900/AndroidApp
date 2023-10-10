@@ -11,10 +11,10 @@
         android:id="@+id/pather2" >
 
         <TextView
+            android:id="@+id/label_ofert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/orange"
-            android:text="@string/label_text01"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:padding="10dp"
@@ -23,10 +23,10 @@
             android:layout_marginEnd="20dp"/>
 
         <TextView
+            android:id="@+id/label_tittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/label_text02"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="35dp"/>
@@ -34,22 +34,40 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/pather3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
         android:layout_below="@id/pather2"
         android:layout_marginTop="10dp">
 
         <ImageView
+            android:id="@+id/img_likes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/img1"/>
+            android:src="@drawable/emojilike"/>
+
+
+        <TextView
+            android:id="@+id/label_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/img_likes"
+            android:layout_alignParentBottom="true"
+            android:textSize="23dp"/>
 
         <ImageView
             android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/emojitime"
+            android:layout_toLeftOf="@id/label_time"/>
+
+        <TextView
+            android:id="@+id/label_time"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/img2"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:textSize="23dp"/>
+
 
 
     </RelativeLayout>
