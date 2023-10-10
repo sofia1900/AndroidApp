@@ -112,6 +112,17 @@ class Ex02FormActivity : AppCompatActivity() {
             updatRow1(users)
             updateRow2(users)
             updateRow3(users)
+        }else if (users.size == 4) {
+            updatRow1(users)
+            updateRow2(users)
+            updateRow3(users)
+            updateRow4(users)
+        }else{
+            updatRow1(users)
+            updateRow2(users)
+            updateRow3(users)
+            updateRow4(users)
+            updateRow5(users)
         }
     }
 
@@ -122,29 +133,29 @@ class Ex02FormActivity : AppCompatActivity() {
 
     private fun updatRow1 (users : List<User>){
         val row = findViewById<ViewGroup>(R.id.row_1)
-        updateRow(row, users)
+        updateRow(row, users, 0)
     }
     private fun updateRow2 (users : List<User>){
         val row = findViewById<ViewGroup>(R.id.row_2)
-        updateRow(row, users)
+        updateRow(row, users, 1)
     }
     private fun updateRow3 (users : List<User>){
         val row = findViewById<ViewGroup>(R.id.row_3)
-        updateRow(row, users)
+        updateRow(row, users, 2)
     }
     private fun updateRow4 (users : List<User>){
         val row = findViewById<ViewGroup>(R.id.row_4)
-        updateRow(row, users)
+        updateRow(row, users, 3)
     }
     private fun updateRow5 (users : List<User>){
         val row = findViewById<ViewGroup>(R.id.row_5)
-        updateRow(row, users)
+        updateRow(row, users, 4)
     }
 
-    private fun updateRow (row : ViewGroup, users : List<User>){
-        row.findViewById<TextView>(R.id.label_name).setText(users.get(1).name)
-        row.findViewById<TextView>(R.id.label_surname).setText(users.get(1).surname)
-        row.findViewById<TextView>(R.id.label_id).setText(users.get(1).id.toString())
+    private fun updateRow (row : ViewGroup, users : List<User>, pos : Int){
+        row.findViewById<TextView>(R.id.label_name).setText(users.get(pos).name)
+        row.findViewById<TextView>(R.id.label_surname).setText(users.get(pos).surname)
+        row.findViewById<TextView>(R.id.label_id).setText(users.get(pos).id.toString())
         row.findViewById<Button>(R.id.action_delete).visibility = View.VISIBLE
     }
 
