@@ -38,14 +38,14 @@ class Ex02FormActivity : AppCompatActivity() {
 
     private fun setupView (){
 
-        //SAVE AND PRINT
+        //SAVE AND UPDATE VIEW
         val actionButtonSave = findViewById<Button>(R.id.action_save)
         actionButtonSave.setOnClickListener {
             viewModel.saveUser(getNameInput(), getSurnameInput()) //GUARDO LOS DATOS
             getUsers()
         }
 
-        //CLEAN
+        //CLEAN VIEW
         val actionButtonClean = findViewById<Button>(R.id.action_clean)
         actionButtonClean.setOnClickListener {
             cleanInput()
@@ -66,19 +66,19 @@ class Ex02FormActivity : AppCompatActivity() {
         }
         val row3 = findViewById<ViewGroup>(R.id.row_3)
         val actionButtonDelete3 = row3.findViewById<Button>(R.id.action_delete)
-        actionButtonDelete2.setOnClickListener {
+        actionButtonDelete3.setOnClickListener {
             cleanView(row3)
             deleteUser(row3)
         }
         val row4 = findViewById<ViewGroup>(R.id.row_4)
         val actionButtonDelete4 = row4.findViewById<Button>(R.id.action_delete)
-        actionButtonDelete2.setOnClickListener {
+        actionButtonDelete4.setOnClickListener {
             cleanView(row4)
             deleteUser(row4)
         }
         val row5 = findViewById<ViewGroup>(R.id.row_5)
         val actionButtonDelete5 = row5.findViewById<Button>(R.id.action_delete)
-        actionButtonDelete2.setOnClickListener {
+        actionButtonDelete5.setOnClickListener {
             cleanView(row5)
             deleteUser(row5)
         }
