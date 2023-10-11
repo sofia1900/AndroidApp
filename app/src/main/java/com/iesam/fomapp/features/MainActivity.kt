@@ -7,7 +7,7 @@ import android.widget.Button
 import com.iesam.fomapp.R
 import com.iesam.fomapp.features.ex01.presentation.Ex01FormActivity
 import com.iesam.fomapp.features.ex02.presentation.Ex02FormActivity
-import com.iesam.fomapp.features.ex03.presentation.Ex03Activity
+import com.iesam.fomapp.features.ex03.Ex03Activity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.iesam.fomapp.features.ex03.presentation
+package com.iesam.fomapp.features.ex03.ejem02.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

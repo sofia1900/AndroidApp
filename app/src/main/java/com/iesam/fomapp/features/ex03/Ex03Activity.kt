@@ -1,4 +1,4 @@
-package com.iesam.fomapp.features.ex03.presentation
+package com.iesam.fomapp.features.ex03
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import com.iesam.fomapp.R
 import com.iesam.fomapp.features.ex03.ejem01.presentation.Ex03_1Activity
+import com.iesam.fomapp.features.ex03.ejem02.presentation.Ex03_2Activity
 
 class Ex03Activity : AppCompatActivity() {
 
