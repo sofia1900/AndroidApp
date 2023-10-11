@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,63 +7,127 @@
     tools:context=".features.ex03.ejem02.presentation.Ex03_2Activity"
     android:layout_margin="10dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/chat1"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/emoji"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/emoji"
-            android:layout_marginEnd="15dp"/>
+            app:layout_constraintStart_toStartOf="@id/line"
+            app:layout_constraintTop_toTopOf="@id/line"
+            android:src="@drawable/emoji" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/labeL_nameC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/emoji"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Fin de semana"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/label_namePerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/labeL_nameC"
+            app:layout_constraintBottom_toBottomOf="@id/line"
+            tools:text="Sofia: "/>
+
+        <ImageView
+            android:id="@+id/img_sticker"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            app:layout_constraintStart_toEndOf="@id/label_namePerson"
+            app:layout_constraintBottom_toBottomOf="@id/label_namePerson"
+            app:layout_constraintTop_toTopOf="@id/label_namePerson"
+            android:src="@drawable/stickers"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/img_sticker"
+            app:layout_constraintBottom_toBottomOf="@id/line"
+            tools:text="sticker"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/line"
+            app:layout_constraintTop_toTopOf="@id/line"
+            tools:text="9:49"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/line"
+            app:layout_constraintBottom_toBottomOf="@id/line"
+            android:src="@drawable/chat1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line">
+
+        <ImageView
+            android:id="@+id/emoji1"
+            android:layout_width="50dp"
             android:layout_height="50dp"
-            android:orientation="vertical">
+            app:layout_constraintStart_toStartOf="@id/line2"
+            app:layout_constraintTop_toTopOf="@id/line2"
+            android:src="@drawable/emoji" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+        <TextView
+            android:id="@+id/labeL_nameC1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/emoji1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Francisco Flores"
+            android:layout_marginStart="10dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_chat1Name"
-                    android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/label_namePerson1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/labeL_nameC1"
+            app:layout_constraintBottom_toBottomOf="@id/line2"
+            tools:text=""/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_chat1Time"
-                    android:gravity="right"
-                    android:textColor="@color/green"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/label_namePerson1"
+            app:layout_constraintBottom_toBottomOf="@id/line2"
+            tools:text="escribiendo..."
+            android:layout_marginStart="5dp"/>
 
-            </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/line2"
+            app:layout_constraintTop_toTopOf="@id/line2"
+            tools:text="9:45"/>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="bottom"
-                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sofia: sticker" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/chat1" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-            </RelativeLayout>
-
-        </LinearLayout>
-    </LinearLayout>
-
-</LinearLayout>
