@@ -37,6 +37,7 @@ class Ex02FormActivity : AppCompatActivity() {
     }
 
     private fun setupView (){
+        getUsers()
 
         //SAVE AND UPDATE VIEW
         val actionButtonSave = findViewById<Button>(R.id.action_save)
@@ -102,6 +103,8 @@ class Ex02FormActivity : AppCompatActivity() {
         val users = mapUsers.values.map{
             gson.fromJson(it, User::class.java)
         }
+
+        cleanTotalView()
 
         if (users.size == 1){
             updatRow1(users)
@@ -180,6 +183,21 @@ class Ex02FormActivity : AppCompatActivity() {
     }
     private fun invisibleButtomDelete (row : ViewGroup){
         row.findViewById<Button>(R.id.action_delete).visibility = View.INVISIBLE
+    }
+
+    private fun cleanTotalView(){
+        val row1 = findViewById<ViewGroup>(R.id.row_1)
+        val row2 = findViewById<ViewGroup>(R.id.row_2)
+        val row3 = findViewById<ViewGroup>(R.id.row_3)
+        val row4 = findViewById<ViewGroup>(R.id.row_4)
+        val row5 = findViewById<ViewGroup>(R.id.row_5)
+
+        val rows = mutableListOf<ViewGroup>(row1, row2, row3, row4, row5)
+
+        for (row in rows){
+            cleanView(row)
+        }
+
     }
 
     /*
