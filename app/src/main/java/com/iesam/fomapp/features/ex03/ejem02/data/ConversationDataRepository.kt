@@ -3,20 +3,20 @@ package com.iesam.fomapp.features.ex03.ejem02.data
 import com.iesam.fomapp.app.Either
 import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.app.right
-import com.iesam.fomapp.features.ex03.ejem02.data.local.XmlLocalDataRepository
-import com.iesam.fomapp.features.ex03.ejem02.data.remote.ApiMockRemoteDataRepository
+import com.iesam.fomapp.features.ex03.ejem02.data.local.XmlLocalDataSource
+import com.iesam.fomapp.features.ex03.ejem02.data.remote.ApiMockRemoteDataSource
 import com.iesam.fomapp.features.ex03.ejem02.domain.Conversation
 import com.iesam.fomapp.features.ex03.ejem02.domain.ConversationRepository
 
-class ConversationDataRepository (private val xmlLocalDataRepository: XmlLocalDataRepository,
-                                    private val apiMockRemoteDataRepository: ApiMockRemoteDataRepository) : ConversationRepository {
+class ConversationDataRepository (private val xmlLocalDataSource: XmlLocalDataSource,
+                                  private val apiMockRemoteDataSource: ApiMockRemoteDataSource) : ConversationRepository {
     override fun findAllConversation(): Either<ErrorApp, List<Conversation>> {
-        val resultConverLocal = xmlLocalDataRepository.findAllConversations()
+        val resultConverLocal = xmlLocalDataSource.findAllConversations()
         if (resultConverLocal.isRight() && !!resultConverLocal.get().isEmpty()) return resultConverLocal.get().right()
         else{
-            return apiMockRemoteDataRepository.getConversations().map {
+            return apiMockRemoteDataSource.getConversations().map {
                for (c in it){
-                   xmlLocalDataRepository.saveConversation(c)
+                   xmlLocalDataSource.saveConversation(c)
                }
                 it
             }

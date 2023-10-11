@@ -5,7 +5,7 @@ import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.app.right
 import com.iesam.fomapp.features.ex03.ejem02.domain.Conversation
 
-class ApiMockRemoteDataRepository {
+class ApiMockRemoteDataSource {
 
     fun getConversations () : Either<ErrorApp, List<Conversation>> {
         val c1= Conversation("Fin de semana", "Sofia: ", "9:49")

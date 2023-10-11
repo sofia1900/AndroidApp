@@ -8,7 +8,7 @@ import com.iesam.fomapp.app.left
 import com.iesam.fomapp.app.right
 import com.iesam.fomapp.features.ex03.ejem02.domain.Conversation
 
-class XmlLocalDataRepository (private val context : Context){
+class XmlLocalDataSource (private val context : Context){
 
     private val sharedPref = context.getSharedPreferences("conversations", Context.MODE_PRIVATE)
     private val gson = Gson()
