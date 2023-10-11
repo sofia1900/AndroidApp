@@ -41,9 +41,9 @@ class Ex03_1Activity : AppCompatActivity() {
     }
 
     private fun bindData (burger : Burger){
-        findViewById<TextView>(R.id.label_ofert).setText(burger.ofert)
-        findViewById<TextView>(R.id.label_tittle).setText(burger.tittle)
-        findViewById<TextView>(R.id.label_likes).setText(burger.likes)
-        findViewById<TextView>(R.id.label_time).setText(burger.time)
+        findViewById<TextView>(R.id.label_ofert).text = burger.ofert
+        findViewById<TextView>(R.id.label_tittle).text = burger.tittle
+        findViewById<TextView>(R.id.label_likes).text = burger.likes
+        findViewById<TextView>(R.id.label_time).text = burger.time
     }
 }

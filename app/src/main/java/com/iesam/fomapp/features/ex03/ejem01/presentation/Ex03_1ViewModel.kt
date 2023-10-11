@@ -12,8 +12,8 @@ import kotlinx.coroutines.launch
 
 class Ex03_1ViewModel (private val getBurgerUseCase: GetBurgerUseCase) : ViewModel() {
 
-    private val _uiState = MutableLiveData<Ex03_1ViewModel.UiState>()
-    val uiState: LiveData<Ex03_1ViewModel.UiState> = _uiState
+    private val _uiState = MutableLiveData<UiState>()
+    val uiState: LiveData<UiState> = _uiState
 
     fun getUser () {
         viewModelScope.launch(Dispatchers.IO) {
