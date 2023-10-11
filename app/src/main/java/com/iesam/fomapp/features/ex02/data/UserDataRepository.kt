@@ -19,7 +19,7 @@ class UserDataRepository (private val localDataSource: XmlLocalDataSource): User
         return localDataSource.deleteUserById(userId)
     }
 
-    override fun findAll(): Either<ErrorApp, Map<String, String>> {
+    override fun findAll(): Either<ErrorApp, List<User>> {
         return localDataSource.findAll()
     }
 }

@@ -38,9 +38,12 @@ class XmlLocalDataSource (private val context : Context){
         }
     }
 
-    fun findAll () : Either<ErrorApp, Map<String, String>>{
-        val users = sharedPref.all as Map<String, String>
-        return users.right()
+    fun findAll () : Either<ErrorApp, List<User>> {
+        val usersMap = sharedPref.all as Map<String, String>
+        val usersGson = usersMap.values.map {
+            gson.fromJson(it, User::class.java)
+        }
+        return usersGson.right()
     }
 
     fun deleteUserById (userId : Int) : Either<ErrorApp, Boolean>{

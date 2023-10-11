@@ -1,6 +1,5 @@
 package com.iesam.fomapp.features.ex02.presentation
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -25,7 +24,7 @@ class Ex02ViewModel (private val saveUserUseCase: SaveUserUseCase,
 
     fun saveUser (name : String, surname : String){
         saveUserUseCase(name, surname).fold(
-            {return responseError(it) },
+            { return responseError(it) },
             { return responseSuccess(it) }
         )
     }
@@ -65,15 +64,15 @@ class Ex02ViewModel (private val saveUserUseCase: SaveUserUseCase,
         _uiState.postValue(UiState(user = user))
     }
 
-    private fun responseFindAllUsersSuccess (allUsers : Map<String, String>){
-        _uiState.postValue(UiState(mapUsers = allUsers))
+    private fun responseFindAllUsersSuccess (allUsers : List<User>){
+        _uiState.postValue(UiState(listUsers = allUsers))
     }
 
     data class UiState(
         val errorApp: ErrorApp? = null,
         val isLoading: Boolean = false,
         val user: User? = null,
-        val mapUsers : Map<String, String>? = null
+        val listUsers : List<User>? = null
     )
 
 }

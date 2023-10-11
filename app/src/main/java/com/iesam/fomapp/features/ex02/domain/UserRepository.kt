@@ -11,6 +11,6 @@ interface UserRepository {
 
     fun deleteUser (userId : Int) : Either<ErrorApp, Boolean>
 
-    fun findAll() : Either<ErrorApp, Map<String, String> >
+    fun findAll() : Either<ErrorApp, List<User> >
 
 }
