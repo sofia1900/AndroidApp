@@ -23,10 +23,10 @@ class Ex03_1Activity : AppCompatActivity() {
     }
 
     private fun setupView (){
-        getBurger()
+        loadBurger()
     }
 
-    private fun getBurger(){
+    private fun loadBurger(){
         setupObserver()
         viewModel.getUser()
     }
