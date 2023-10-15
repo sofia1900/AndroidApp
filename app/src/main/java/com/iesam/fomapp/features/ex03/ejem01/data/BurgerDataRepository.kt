@@ -4,12 +4,12 @@ import com.iesam.fomapp.app.Either
 import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.app.right
 import com.iesam.fomapp.features.ex03.ejem01.data.local.XmlLocalDataSource
-import com.iesam.fomapp.features.ex03.ejem01.data.remote.ApiMockRemoteLocalDataSource
+import com.iesam.fomapp.features.ex03.ejem01.data.remote.ApiMockRemoteDataSource
 import com.iesam.fomapp.features.ex03.ejem01.domain.Burger
 import com.iesam.fomapp.features.ex03.ejem01.domain.BurgerRepository
 
 class BurgerDataRepository (private val xmlLocalDataSource: XmlLocalDataSource,
-                            private val apiMockRemoteLocalDataSource: ApiMockRemoteLocalDataSource)
+                            private val apiMockRemoteDataSource: ApiMockRemoteDataSource)
     : BurgerRepository {
     override fun getBurguer(): Either<ErrorApp, Burger> {
         //Si está en local, devuelvo lo de local.
@@ -20,7 +20,7 @@ class BurgerDataRepository (private val xmlLocalDataSource: XmlLocalDataSource,
 
          return  if (bugerLocal.isRight() && bugerLocal.get().tittle != "") bugerLocal.get().right()
          else{
-             return apiMockRemoteLocalDataSource.getBurgerMock().map {
+             return apiMockRemoteDataSource.getBurgerMock().map {
                 xmlLocalDataSource.saveBurger(it)
                  it
              }
