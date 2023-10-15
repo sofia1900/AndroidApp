@@ -24,7 +24,8 @@ class Ex03_2ViewModel (private val findAllConversationUseCase: FindAllConversati
         }
     }
 
-    private fun responseError(errorApp: ErrorApp) {}
+    private fun responseError(errorApp: ErrorApp) {
+    }
 
     private fun responseSucess (listConversation: List<Conversation>){
         _uiState.postValue(Ex03_2ViewModel.UiState(listConversations = listConversation))

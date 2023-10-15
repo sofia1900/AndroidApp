@@ -3,7 +3,6 @@ package com.iesam.fomapp.features.ex03.ejem02.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import com.iesam.fomapp.R
 import com.iesam.fomapp.databinding.ActivityEx032Binding
 import com.iesam.fomapp.features.ex03.ejem02.data.ConversationDataRepository
 import com.iesam.fomapp.features.ex03.ejem02.data.local.XmlLocalDataSource
@@ -44,14 +43,16 @@ class Ex03_2Activity : AppCompatActivity() {
     }
 
     private fun bindData (listConver : List<Conversation>){
+
         binding.labelNameC.text = listConver.get(0).name
         binding.labelNamePerson.text = listConver.get(0).text
         binding.labelMsg1.text = listConver.get(0).msg
         binding.labelTimeP1.text = listConver.get(0).time
 
         binding.labelNameC1.text = listConver.get(1).name
-        binding.labelNamePerson1.text = listConver.get(0).text
-        binding.labelTimeP2.text = listConver.get(0).time
+        binding.labelNamePerson1.text = listConver.get(1).text
+        binding.labelTextPerson1.text = listConver.get(1).msg
+        binding.labelTimeP2.text = listConver.get(1).time
 
     }
 

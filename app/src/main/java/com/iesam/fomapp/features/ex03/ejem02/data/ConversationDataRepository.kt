@@ -12,7 +12,7 @@ class ConversationDataRepository (private val xmlLocalDataSource: XmlLocalDataSo
                                   private val apiMockRemoteDataSource: ApiMockRemoteDataSource) : ConversationRepository {
     override fun findAllConversation(): Either<ErrorApp, List<Conversation>> {
         val resultConverLocal = xmlLocalDataSource.findAllConversations()
-        if (resultConverLocal.isRight() && !!resultConverLocal.get().isEmpty()) return resultConverLocal.get().right()
+        if (resultConverLocal.isRight() && resultConverLocal.get().isNotEmpty()) return resultConverLocal.get().right()
         else{
             return apiMockRemoteDataSource.getConversations().map {
                for (c in it){

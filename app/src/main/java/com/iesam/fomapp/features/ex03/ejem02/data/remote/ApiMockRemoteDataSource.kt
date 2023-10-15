@@ -9,7 +9,7 @@ class ApiMockRemoteDataSource {
 
     fun getConversations () : Either<ErrorApp, List<Conversation>> {
         val c1= Conversation("Fin de semana", "Sofia: ", "sticker","9:49")
-        val c2 = Conversation("Francisco Flores", "escribiendo...: ", "", "9:45")
+        val c2 = Conversation("Francisco Flores", "escribiendo... ", "", "9:45")
 
         return listOf<Conversation>(c1, c2).right()
     }
