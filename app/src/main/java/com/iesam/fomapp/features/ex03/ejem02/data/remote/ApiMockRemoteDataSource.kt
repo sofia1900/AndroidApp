@@ -8,8 +8,8 @@ import com.iesam.fomapp.features.ex03.ejem02.domain.Conversation
 class ApiMockRemoteDataSource {
 
     fun getConversations () : Either<ErrorApp, List<Conversation>> {
-        val c1= Conversation("Fin de semana", "Sofia: ", "sticker","9:49")
-        val c2 = Conversation("Francisco Flores", "escribiendo... ", "", "9:45")
+        val c1= Conversation("1","Fin de semana", "Sofia: ", "sticker","9:49")
+        val c2 = Conversation("2","Francisco Flores", "escribiendo... ", "", "9:45")
 
         return listOf<Conversation>(c1, c2).right()
     }

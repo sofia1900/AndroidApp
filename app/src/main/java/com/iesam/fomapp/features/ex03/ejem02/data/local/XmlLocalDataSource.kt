@@ -23,10 +23,8 @@ class XmlLocalDataSource (private val context : Context){
     fun saveConversation (conversation: Conversation) : Either<ErrorApp, Boolean>{
         return try{
             with(sharedPref.edit()){
-                putString("name", conversation.name)
-                putString("text", conversation.text)
-                putString("msg", conversation.msg)
-                putString("time", conversation.time)
+                val jsonConversation = gson.toJson(conversation, Conversation::class.java)
+                putString(conversation.id, jsonConversation)
                 apply()
             }
             true.right()
