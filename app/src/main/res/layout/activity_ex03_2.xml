@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".features.ex03.ejem02.presentation.Ex03_2Activity"
-    android:layout_margin="10dp">
+    android:layout_margin="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/line"
