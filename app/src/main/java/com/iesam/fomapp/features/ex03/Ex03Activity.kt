@@ -11,10 +11,6 @@ import com.iesam.fomapp.features.ex03.ejem02.presentation.Ex03_2Activity
 
 class Ex03Activity : AppCompatActivity() {
 
-    init {
-        Log.d("@dev", "Estoy en actividad 3")
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ex03)
