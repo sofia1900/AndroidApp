@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".features.ex03.ejem03.Ex03_3Activity"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/label_tittle_descargas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Descargas"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <ImageView
+        android:id="@+id/image_peli1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/label_tittle_descargas"
+        app:layout_constraintStart_toStartOf="@id/label_tittle_descargas"
+        android:src="@drawable/descargas1"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/label_tittle_p1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/image_peli1"
+        app:layout_constraintStart_toEndOf="@id/image_peli1"
+        tools:text = "Jungle Cruise"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"/>
+
+    <include
+        app:layout_constraintTop_toBottomOf="@id/label_tittle_p1"
+        app:layout_constraintStart_toStartOf="@id/label_tittle_p1"
+        android:id="@+id/view03_row1"
+        layout="@layout/view03_03_row"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/view03_row1"
+        app:layout_constraintBottom_toBottomOf="@id/view03_row1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/load_descargas"
+        android:layout_marginEnd="10dp"/>
+
+    <ImageView
+        android:id="@+id/image_peli2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/image_peli1"
+        app:layout_constraintStart_toStartOf="@id/label_tittle_descargas"
+        android:src="@drawable/descargas2"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/label_tittle_p2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/image_peli2"
+        app:layout_constraintStart_toEndOf="@id/image_peli2"
+        tools:text = "Black Window"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"/>
+
+    <include
+        app:layout_constraintTop_toBottomOf="@id/label_tittle_p2"
+        app:layout_constraintStart_toStartOf="@id/label_tittle_p2"
+        android:id="@+id/view03_row2"
+        layout="@layout/view03_03_row"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/view03_row2"
+        app:layout_constraintBottom_toBottomOf="@id/view03_row2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/load_descargas"
+        android:layout_marginEnd="10dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
