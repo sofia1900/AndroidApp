@@ -20,7 +20,7 @@
             android:textStyle="bold"
             android:padding="10dp"
             tools:text="-15%"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="20dp"/>
 
@@ -31,7 +31,7 @@
             android:layout_centerInParent="true"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:textSize="35dp"/>
+            android:textSize="35sp"/>
 
     </RelativeLayout>
 
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/img_likes"
             android:layout_alignParentBottom="true"
-            android:textSize="20dp"/>
+            android:textSize="20sp"/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:textSize="20dp"/>
+            android:textSize="20sp"/>
 
 
 
