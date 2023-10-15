@@ -19,10 +19,6 @@ class Ex03_1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ex03_1)
-        setupView()
-    }
-
-    private fun setupView (){
         loadBurger()
     }
 
