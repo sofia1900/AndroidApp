@@ -23,7 +23,7 @@
             android:src="@drawable/whatsappemoji" />
 
         <TextView
-            android:id="@+id/labeL_nameC"
+            android:id="@+id/label_nameC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/emoji"
@@ -36,7 +36,7 @@
             android:id="@+id/label_namePerson"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/labeL_nameC"
+            app:layout_constraintStart_toStartOf="@id/label_nameC"
             app:layout_constraintBottom_toBottomOf="@id/line"
             tools:text="Sofia: "/>
 
@@ -50,6 +50,7 @@
             android:src="@drawable/stickers"/>
 
         <TextView
+            android:id="@+id/label_msg1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/img_sticker"
@@ -58,6 +59,7 @@
             android:layout_marginStart="5dp"/>
 
         <TextView
+            android:id="@+id/label_timeP1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@id/line"
@@ -98,7 +100,7 @@
             android:src="@drawable/whatsappperfile" />
 
         <TextView
-            android:id="@+id/labeL_nameC1"
+            android:id="@+id/label_nameC1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/emoji1"
@@ -111,11 +113,12 @@
             android:id="@+id/label_namePerson1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/labeL_nameC1"
+            app:layout_constraintStart_toStartOf="@id/label_nameC1"
             app:layout_constraintBottom_toBottomOf="@id/line2"
             tools:text=""/>
 
         <TextView
+            android:id="@+id/label_textPerson1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/label_namePerson1"
@@ -126,6 +129,7 @@
             android:textColor="@color/green"/>
 
         <TextView
+            android:id="@+id/label_timeP2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@id/line2"
