@@ -16,6 +16,12 @@
             android:name=".features.ex03.ejem06.Ex03_6Activity"
             android:exported="false" />
         <activity
+            android:name=".features.ex03.ejem05.Ex03_5Activity"
+            android:exported="false" />
+        <activity
+            android:name=".features.ex03.ejem05.Ex03_4Activity"
+            android:exported="false" />
+        <activity
             android:name=".features.ex03.ejem04.Ex03_4Activity"
             android:exported="false" />
         <activity
