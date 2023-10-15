@@ -8,6 +8,7 @@ import com.iesam.fomapp.R
 import com.iesam.fomapp.features.ex03.ejem01.presentation.Ex03_1Activity
 import com.iesam.fomapp.features.ex03.ejem02.presentation.Ex03_2Activity
 import com.iesam.fomapp.features.ex03.ejem03.presentation.Ex03_3Activity
+import com.iesam.fomapp.features.ex04.Ex03_4Activity
 
 class Ex03Activity : AppCompatActivity() {
 
@@ -28,6 +29,10 @@ class Ex03Activity : AppCompatActivity() {
 
         findViewById<Button>(R.id.action_3_3).setOnClickListener {
             startActivity(Intent(this, Ex03_3Activity::class.java))
+        }
+
+        findViewById<Button>(R.id.action_3_3).setOnClickListener {
+            startActivity(Intent(this, Ex03_4Activity::class.java))
         }
     }
 }
