@@ -25,6 +25,7 @@ class XmlLocalDataSource (private val context : Context){
             with(sharedPref.edit()){
                 putString("name", conversation.name)
                 putString("text", conversation.text)
+                putString("msg", conversation.msg)
                 putString("time", conversation.time)
                 apply()
             }
