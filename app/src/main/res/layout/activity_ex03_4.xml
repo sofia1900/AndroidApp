@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.ex04.Ex03_4Activity">
+    tools:context=".features.ex03.ejem04.Ex03_4Activity">
 
     <ImageView
         android:id="@+id/image_alojamiento"
