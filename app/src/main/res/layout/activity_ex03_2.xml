@@ -20,7 +20,7 @@
             android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="@id/line"
             app:layout_constraintTop_toTopOf="@id/line"
-            android:src="@drawable/emoji" />
+            android:src="@drawable/whatsappemoji" />
 
         <TextView
             android:id="@+id/labeL_nameC"
@@ -29,6 +29,7 @@
             app:layout_constraintStart_toEndOf="@id/emoji"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Fin de semana"
+            android:textStyle="bold"
             android:layout_marginStart="10dp"/>
 
         <TextView
@@ -61,21 +62,23 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@id/line"
             app:layout_constraintTop_toTopOf="@id/line"
-            tools:text="9:49"/>
+            tools:text="9:49"
+            android:textColor="@color/green"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@id/line"
             app:layout_constraintBottom_toBottomOf="@id/line"
-            android:src="@drawable/chat1" />
+            android:src="@drawable/whatsapp2" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:id="@+id/label_space"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line"/>
 
@@ -84,7 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line">
+        app:layout_constraintTop_toBottomOf="@id/label_space">
 
         <ImageView
             android:id="@+id/emoji1"
@@ -92,7 +95,7 @@
             android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="@id/line2"
             app:layout_constraintTop_toTopOf="@id/line2"
-            android:src="@drawable/emoji" />
+            android:src="@drawable/whatsappperfile" />
 
         <TextView
             android:id="@+id/labeL_nameC1"
@@ -101,6 +104,7 @@
             app:layout_constraintStart_toEndOf="@id/emoji1"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Francisco Flores"
+            android:textStyle="bold"
             android:layout_marginStart="10dp"/>
 
         <TextView
@@ -117,7 +121,9 @@
             app:layout_constraintStart_toEndOf="@id/label_namePerson1"
             app:layout_constraintBottom_toBottomOf="@id/line2"
             tools:text="escribiendo..."
-            android:layout_marginStart="5dp"/>
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/green"/>
 
         <TextView
             android:layout_width="wrap_content"
