@@ -31,7 +31,7 @@ class Ex03Activity : AppCompatActivity() {
             startActivity(Intent(this, Ex03_3Activity::class.java))
         }
 
-        findViewById<Button>(R.id.action_3_3).setOnClickListener {
+        findViewById<Button>(R.id.action_3_4).setOnClickListener {
             startActivity(Intent(this, Ex03_4Activity::class.java))
         }
     }
