@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name01">AndroidTrainning</string>
+
+    <string name="label_name01">Name</string>
+    <string name="label_surname01">Surname</string>
+    <string name="label_age01">Age</string>
+    <string name="action_save01">Save</string>
+    <string name="action_get01">Recover</string>
+    <string name="action_clean01">Clean</string>
+
+    <string name="app_name">FomApp</string>
+    <string name="label_name">Name</string>
+    <string name="label_surname">Surnames</string>
+    <string name="action_save">Save</string>
+    <string name="action_clean">Clean</string>
+    <string name="action_delete">Delete</string>
+
+    <string name="action_01_form">Exercise 01 Form</string>
+    <string name="action_02_form">Exercise 02 Form</string>
+    <string name="action_03_form">Exercise 03 Views</string>
+    <string name="action_04_form">Exercise 04 View with Glide Loading and Error</string>
+
+
+    <string name="action_3_1">Vista 1 Burgers</string>
+    <string name="action_3_2">Vista 2 Chat</string>
+    <string name="action_3_3">Vista 3 Download Films</string>
+    <string name="action_3_4">Vista 4 Housing</string>
+    <string name="action_3_5">Vista 5 Carné Jóven</string>
+    <string name="action_3_6">Vista 6 Huellas</string>
+
+
+    <string name="label_chat1Name">Weekend</string>
+    <string name="label_chat1Time">9:49</string>
+
+    <string name="label_unknow_error">Unknown error</string>
+</resources>

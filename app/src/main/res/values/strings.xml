@@ -33,6 +33,9 @@
     <string name="label_chat1Time">9:49</string>
 
 
+    <string name="label_unknow_error">Error desconocido</string>
+
+
 </resources>
 
 

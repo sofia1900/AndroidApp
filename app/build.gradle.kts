@@ -58,4 +58,10 @@ dependencies {
     //Libreira GSON
     implementation("com.google.code.gson:gson:2.10.1")
 
+    //Glide
+    implementation("com.github.bumptech.glide:glide:4.16.02")
+
+    //Skeleton Layout
+    implementation("com.faltenreich:skeletonlayout:5.0.0")
+
 }
