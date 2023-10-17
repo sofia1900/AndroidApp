@@ -1,12 +1,12 @@
-package com.iesam.fomapp.features.ex03.ejem01.data
+package com.iesam.fomapp.features.ex04.data
 
 import com.iesam.fomapp.app.Either
 import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.app.right
-import com.iesam.fomapp.features.ex03.ejem01.data.local.XmlLocalDataSource
-import com.iesam.fomapp.features.ex03.ejem01.data.remote.ApiMockRemoteDataSource
-import com.iesam.fomapp.features.ex03.ejem01.domain.Burger
-import com.iesam.fomapp.features.ex03.ejem01.domain.BurgerRepository
+import com.iesam.fomapp.features.ex04.data.local.XmlLocalDataSource
+import com.iesam.fomapp.features.ex04.data.remote.ApiMockRemoteDataSource
+import com.iesam.fomapp.features.ex04.domain.Burger
+import com.iesam.fomapp.features.ex04.domain.BurgerRepository
 
 class BurgerDataRepository (private val xmlLocalDataSource: XmlLocalDataSource,
                             private val apiMockRemoteDataSource: ApiMockRemoteDataSource)
