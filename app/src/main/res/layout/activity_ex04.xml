@@ -51,46 +51,43 @@
                 android:textSize="30sp"
                 android:textStyle="bold"/>
 
-            <RelativeLayout
-                android:layout_width="0dp"
+
+            <ImageView
+                android:id="@+id/img_likes"
+                android:layout_width="wrap_content"
                 android:layout_height="43dp"
-                app:layout_constraintTop_toBottomOf="@id/image_burger"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <ImageView
-                    android:id="@+id/img_likes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="43dp"
-                    android:src="@drawable/emojilike"/>
+                app:layout_constraintTop_toBottomOf="@id/image_burger"
+                android:src="@drawable/emojilike"/>
 
 
-                <TextView
-                    android:id="@+id/label_likes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/img_likes"
-                    android:layout_alignParentBottom="true"
-                    android:textSize="20sp"
-                    tools:text="98%"/>
+            <TextView
+                android:id="@+id/label_likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/img_likes"
+                app:layout_constraintTop_toBottomOf="@id/image_burger"
+                app:layout_constraintBottom_toBottomOf="@id/img_likes"
+                android:textSize="20sp"
+                tools:text="98%"/>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/emojitime"
-                    android:layout_toLeftOf="@id/label_time"/>
+            <TextView
+                android:id="@+id/label_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/image_burger"
+                app:layout_constraintBottom_toBottomOf="@id/img_likes"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="20sp"
+                tools:text="20-30min"/>
 
-                <TextView
-                    android:id="@+id/label_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:textSize="20sp"
-                    tools:text="20-30min"/>
-
-            </RelativeLayout>
-
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/image_burger"
+                app:layout_constraintBottom_toBottomOf="@id/img_likes"
+                app:layout_constraintEnd_toStartOf="@id/label_time"
+                android:src="@drawable/emojitime" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

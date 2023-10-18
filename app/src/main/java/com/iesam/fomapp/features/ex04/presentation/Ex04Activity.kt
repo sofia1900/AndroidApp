@@ -28,19 +28,12 @@ class Ex04Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupBinding()
-        setupView ()
         loadBurger()
     }
 
     private fun setupBinding(){
         binding = ActivityEx04Binding.inflate(layoutInflater)
         setContentView(binding.root)
-    }
-
-    private fun setupView () {
-        binding.let {
-            it.imageBurger.setUrl("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.es%2Ffotos-vectores-gratis%2Famerican-burger%2F8&psig=AOvVaw2ajU_oJbIvozd260anBOE1&ust=1697662415202000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCODOpLv7_YEDFQAAAAAdAAAAABAJ")
-        }
     }
 
     private fun loadBurger(){
@@ -87,10 +80,14 @@ class Ex04Activity : AppCompatActivity() {
     }
 
     private fun bindData (burger : Burger){
-        binding.labelOfert.text =  burger.ofert
-        binding.labelTittle.text = burger.tittle
-        binding.labelLikes.text =  burger.likes
-        binding.labelTime.text = burger.time
+
+        binding.apply {
+            imageBurger.setUrl("https://goo.gl/gEgYUd")
+            labelOfert.text =  burger.ofert
+            labelTittle.text = burger.tittle
+            labelLikes.text =  burger.likes
+            labelTime.text = burger.time
+        }
     }
 
 

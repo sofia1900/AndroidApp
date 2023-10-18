@@ -30,7 +30,7 @@ class Ex04ViewModel (private val getBurgerUseCase: GetBurgerUseCase) : ViewModel
     }
 
     private fun responseSucess (burger : Burger){
-        _uiState.postValue(UiState(burger = burger))
+        _uiState.postValue(UiState(burger = burger, isLoading = false))
     }
 
     data class UiState(
