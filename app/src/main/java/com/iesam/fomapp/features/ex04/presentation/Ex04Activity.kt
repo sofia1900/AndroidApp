@@ -2,8 +2,6 @@ package com.iesam.fomapp.features.ex04.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.iesam.fomapp.R
 import com.iesam.fomapp.app.ErrorApp
