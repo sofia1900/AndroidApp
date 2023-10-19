@@ -80,7 +80,7 @@ class Ex04Activity : AppCompatActivity() {
     private fun bindData (burger : Burger){
 
         binding.apply {
-            imageBurger.setUrl("https://goo.gl/gEgYUd")
+            imageBurger.setUrl("https://s1.eestatic.com/2023/02/10/alicante/vivir/740436512_230811065_1706x960.jpg")
             labelOfert.text =  burger.ofert
             labelTittle.text = burger.tittle
             labelLikes.text =  burger.likes
