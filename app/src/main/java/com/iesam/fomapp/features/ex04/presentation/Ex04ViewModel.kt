@@ -8,6 +8,7 @@ import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.features.ex04.domain.Burger
 import com.iesam.fomapp.features.ex04.domain.GetBurgerUseCase
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class Ex04ViewModel (private val getBurgerUseCase: GetBurgerUseCase) : ViewModel() {
@@ -18,6 +19,7 @@ class Ex04ViewModel (private val getBurgerUseCase: GetBurgerUseCase) : ViewModel
     fun loadBurger () {
         _uiState.value = UiState(isLoading = true)
         viewModelScope.launch(Dispatchers.IO) {
+            //delay(5000) //Para probar isLoading
             getBurgerUseCase().fold(
                 {responseError(it)},
                 {responseSucess(it)}

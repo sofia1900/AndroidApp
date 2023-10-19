@@ -95,8 +95,7 @@
 
     <include
         android:id="@+id/view_error"
-        layout="@layout/view_error"
-        android:visibility="invisible"/>
+        layout="@layout/view_error" />
 
 </FrameLayout>
 
