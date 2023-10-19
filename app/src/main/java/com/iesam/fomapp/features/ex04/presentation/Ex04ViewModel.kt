@@ -22,7 +22,8 @@ class Ex04ViewModel (private val getBurgerUseCase: GetBurgerUseCase) : ViewModel
             //delay(5000) //Para probar isLoading
             getBurgerUseCase().fold(
                 {responseError(it)},
-                {responseSucess(it)}
+                {responseSucess(it)
+                /*responseError(ErrorApp.UnknowError)*/}
             )
         }
     }
