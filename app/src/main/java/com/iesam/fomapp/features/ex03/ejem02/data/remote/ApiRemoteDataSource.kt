@@ -5,6 +5,7 @@ import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.app.left
 import com.iesam.fomapp.app.right
 import com.iesam.fomapp.features.ex03.ejem02.domain.Conversation
+import com.iesam.fomapp.features.ex03.ejem02.domain.ConversationApiModel
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -20,7 +21,7 @@ class ApiRemoteDataSource {
 
     fun getConversation () : Either<ErrorApp, MutableList<Conversation>> {
         try {
-            val response: Response<List<Conversation>> = apiService.getConversations().execute()
+            val response: Response<List<ConversationApiModel>> = apiService.getConversations().execute()
             if (response.isSuccessful) {
                 val items = response.body()!!
                 var conversations : MutableList<Conversation> = mutableListOf()

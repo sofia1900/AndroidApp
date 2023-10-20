@@ -5,17 +5,11 @@
     android:layout_margin="15dp"
     android:orientation="vertical">
 
-    <include
-        android:id="@+id/row_1"
-        layout="@layout/view_02_ex03_row_list" />
+    <include android:id="@+id/row_1" layout="@layout/view_02_ex03_row_list" />
 
-    <include
-        android:id="@+id/row_2"
-        layout="@layout/view_02_ex03_row_list" />
+    <include android:id="@+id/row_2" layout="@layout/view_02_ex03_row_list" />
 
-    <include
-        android:id="@+id/row_3"
-        layout="@layout/view_02_ex03_row_list" />
+    <include android:id="@+id/row_3" layout="@layout/view_02_ex03_row_list" />
 
 </LinearLayout>
 
