@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.iesam.fomapp.R
+import com.iesam.fomapp.databinding.ActivityEx031Binding
 import com.iesam.fomapp.features.ex03.ejem01.data.BurgerDataRepository
 import com.iesam.fomapp.features.ex03.ejem01.data.local.XmlLocalDataSource
 import com.iesam.fomapp.features.ex03.ejem01.data.remote.ApiMockRemoteDataSource
@@ -14,14 +15,22 @@ import com.iesam.fomapp.features.ex03.ejem01.domain.GetBurgerUseCase
 
 class Ex03_1Activity : AppCompatActivity() {
 
+    lateinit var binding : ActivityEx031Binding
+
     private val viewModel : Ex03_1ViewModel by lazy {
         Ex03_1ViewModel(GetBurgerUseCase(BurgerDataRepository(XmlLocalDataSource(this), ApiRemoteDataSource())))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ex03_1)
+        bindView()
         loadBurger()
+    }
+
+    private fun bindView(){
+        binding = ActivityEx031Binding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
     }
 
     private fun loadBurger(){
