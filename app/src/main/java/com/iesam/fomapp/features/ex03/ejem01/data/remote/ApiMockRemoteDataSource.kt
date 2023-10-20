@@ -8,6 +8,6 @@ import com.iesam.fomapp.features.ex03.ejem01.domain.Burger
 class ApiMockRemoteDataSource {
 
     fun getBurgerMock() : Either<ErrorApp, Burger>{
-        return Burger("-15%", "Burger It","98%", "20-30min").right()
+        return Burger("-15%", "Burger It","98%", "20-30min", "").right()
     }
 }

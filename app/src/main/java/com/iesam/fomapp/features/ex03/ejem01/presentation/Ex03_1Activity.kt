@@ -8,13 +8,14 @@ import com.iesam.fomapp.R
 import com.iesam.fomapp.features.ex03.ejem01.data.BurgerDataRepository
 import com.iesam.fomapp.features.ex03.ejem01.data.local.XmlLocalDataSource
 import com.iesam.fomapp.features.ex03.ejem01.data.remote.ApiMockRemoteDataSource
+import com.iesam.fomapp.features.ex03.ejem01.data.remote.ApiRemoteDataSource
 import com.iesam.fomapp.features.ex03.ejem01.domain.Burger
 import com.iesam.fomapp.features.ex03.ejem01.domain.GetBurgerUseCase
 
 class Ex03_1Activity : AppCompatActivity() {
 
     private val viewModel : Ex03_1ViewModel by lazy {
-        Ex03_1ViewModel(GetBurgerUseCase(BurgerDataRepository(XmlLocalDataSource(this), ApiMockRemoteDataSource())))
+        Ex03_1ViewModel(GetBurgerUseCase(BurgerDataRepository(XmlLocalDataSource(this), ApiRemoteDataSource())))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

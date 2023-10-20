@@ -5,7 +5,6 @@ import com.iesam.fomapp.app.Either
 import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.app.left
 import com.iesam.fomapp.app.right
-import com.iesam.fomapp.features.ex01.domain.User
 import com.iesam.fomapp.features.ex03.ejem01.domain.Burger
 
 class XmlLocalDataSource (private val context : Context){
