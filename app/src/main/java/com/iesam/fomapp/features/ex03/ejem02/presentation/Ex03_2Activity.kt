@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import com.iesam.fomapp.databinding.ActivityEx032Binding
 import com.iesam.fomapp.features.ex03.ejem02.data.ConversationDataRepository
 import com.iesam.fomapp.features.ex03.ejem02.data.local.XmlLocalDataSource
-import com.iesam.fomapp.features.ex03.ejem02.data.remote.ApiMockRemoteDataSource
+import com.iesam.fomapp.features.ex03.ejem02.data.remote.ApiRemoteDataSource
 import com.iesam.fomapp.features.ex03.ejem02.domain.Conversation
 import com.iesam.fomapp.features.ex03.ejem02.domain.FindAllConversationUseCase
 
@@ -15,7 +15,7 @@ class Ex03_2Activity : AppCompatActivity() {
     lateinit var binding: ActivityEx032Binding
 
     private val viewModel : Ex03_2ViewModel by lazy {
-        Ex03_2ViewModel(FindAllConversationUseCase(ConversationDataRepository(XmlLocalDataSource(this), ApiMockRemoteDataSource())))
+        Ex03_2ViewModel(FindAllConversationUseCase(ConversationDataRepository(XmlLocalDataSource(this), ApiRemoteDataSource())))
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,15 +44,9 @@ class Ex03_2Activity : AppCompatActivity() {
 
     private fun bindData (listConver : List<Conversation>){
 
-        binding.labelNameC.text = listConver.get(0).name
-        binding.labelNamePerson.text = listConver.get(0).text
-        binding.labelMsg1.text = listConver.get(0).msg
-        binding.labelTimeP1.text = listConver.get(0).time
-
-        binding.labelNameC1.text = listConver.get(1).name
-        binding.labelNamePerson1.text = listConver.get(1).text
-        binding.labelTextPerson1.text = listConver.get(1).msg
-        binding.labelTimeP2.text = listConver.get(1).time
+        binding.row1.labelName.text = listConver.get(0).name
+        binding.row1.labelMsg.text = listConver.get(0).msg
+        binding.row1.labelTime.text = listConver.get(0).time
 
     }
 

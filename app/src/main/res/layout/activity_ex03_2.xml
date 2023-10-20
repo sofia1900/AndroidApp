@@ -1,143 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".features.ex03.ejem02.presentation.Ex03_2Activity"
-    android:layout_margin="15dp">
+    android:layout_margin="15dp"
+    android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <include
+        android:id="@+id/row_1"
+        layout="@layout/view_02_ex03_row_list" />
 
-        <ImageView
-            android:id="@+id/emoji"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:layout_constraintStart_toStartOf="@id/line"
-            app:layout_constraintTop_toTopOf="@id/line"
-            android:src="@drawable/whatsappemoji" />
+    <include
+        android:id="@+id/row_2"
+        layout="@layout/view_02_ex03_row_list" />
 
-        <TextView
-            android:id="@+id/label_nameC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/emoji"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Fin de semana"
-            android:textStyle="bold"
-            android:layout_marginStart="10dp"/>
+    <include
+        android:id="@+id/row_3"
+        layout="@layout/view_02_ex03_row_list" />
 
-        <TextView
-            android:id="@+id/label_namePerson"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/label_nameC"
-            app:layout_constraintBottom_toBottomOf="@id/line"
-            tools:text="Sofia: "/>
-
-        <ImageView
-            android:id="@+id/img_sticker"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            app:layout_constraintStart_toEndOf="@id/label_namePerson"
-            app:layout_constraintBottom_toBottomOf="@id/label_namePerson"
-            app:layout_constraintTop_toTopOf="@id/label_namePerson"
-            android:src="@drawable/stickers"/>
-
-        <TextView
-            android:id="@+id/label_msg1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/img_sticker"
-            app:layout_constraintBottom_toBottomOf="@id/line"
-            tools:text="sticker"
-            android:layout_marginStart="5dp"/>
-
-        <TextView
-            android:id="@+id/label_timeP1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@id/line"
-            app:layout_constraintTop_toTopOf="@id/line"
-            tools:text="9:49"
-            android:textColor="@color/green"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@id/line"
-            app:layout_constraintBottom_toBottomOf="@id/line"
-            android:src="@drawable/whatsapp2" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/label_space"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/line2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_space">
-
-        <ImageView
-            android:id="@+id/emoji1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:layout_constraintStart_toStartOf="@id/line2"
-            app:layout_constraintTop_toTopOf="@id/line2"
-            android:src="@drawable/whatsappperfile" />
-
-        <TextView
-            android:id="@+id/label_nameC1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/emoji1"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Francisco Flores"
-            android:textStyle="bold"
-            android:layout_marginStart="10dp"/>
-
-        <TextView
-            android:id="@+id/label_namePerson1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/label_nameC1"
-            app:layout_constraintBottom_toBottomOf="@id/line2"
-            tools:text=""/>
-
-        <TextView
-            android:id="@+id/label_textPerson1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/label_namePerson1"
-            app:layout_constraintBottom_toBottomOf="@id/line2"
-            tools:text="escribiendo..."
-            android:layout_marginStart="5dp"
-            android:textStyle="bold"
-            android:textColor="@color/green"/>
-
-        <TextView
-            android:id="@+id/label_timeP2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@id/line2"
-            app:layout_constraintTop_toTopOf="@id/line2"
-            tools:text="9:45"/>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 

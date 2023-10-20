@@ -2,14 +2,11 @@ package com.iesam.fomapp.features.ex03.ejem01.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import androidx.lifecycle.Observer
-import com.iesam.fomapp.R
 import com.iesam.fomapp.app.extensions.setUrl
 import com.iesam.fomapp.databinding.ActivityEx031Binding
 import com.iesam.fomapp.features.ex03.ejem01.data.BurgerDataRepository
 import com.iesam.fomapp.features.ex03.ejem01.data.local.XmlLocalDataSource
-import com.iesam.fomapp.features.ex03.ejem01.data.remote.ApiMockRemoteDataSource
 import com.iesam.fomapp.features.ex03.ejem01.data.remote.ApiRemoteDataSource
 import com.iesam.fomapp.features.ex03.ejem01.domain.Burger
 import com.iesam.fomapp.features.ex03.ejem01.domain.GetBurgerUseCase
