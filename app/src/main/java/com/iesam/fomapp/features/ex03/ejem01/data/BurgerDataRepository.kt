@@ -18,7 +18,7 @@ class BurgerDataRepository (private val xmlLocalDataSource: XmlLocalDataSource,
 
          val bugerLocal = xmlLocalDataSource.getBurger()
 
-         return  if (bugerLocal.isRight() && bugerLocal.get().tittle != "") bugerLocal.get().right()
+         return  if (bugerLocal.isRight() && bugerLocal.get().title != "") bugerLocal.get().right()
          else{
              return apiMockRemoteDataSource.getBurgerMock().map {
                 xmlLocalDataSource.saveBurger(it)

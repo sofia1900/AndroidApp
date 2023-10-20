@@ -16,6 +16,7 @@ class Ex03_1Activity : AppCompatActivity() {
     private val viewModel : Ex03_1ViewModel by lazy {
         Ex03_1ViewModel(GetBurgerUseCase(BurgerDataRepository(XmlLocalDataSource(this), ApiMockRemoteDataSource())))
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ex03_1)
@@ -24,7 +25,7 @@ class Ex03_1Activity : AppCompatActivity() {
 
     private fun loadBurger(){
         setupObserver()
-        viewModel.getUser()
+        viewModel.loadBurger()
     }
 
     private fun setupObserver (){
@@ -37,9 +38,9 @@ class Ex03_1Activity : AppCompatActivity() {
     }
 
     private fun bindData (burger : Burger){
-        findViewById<TextView>(R.id.label_ofert).text = burger.ofert
-        findViewById<TextView>(R.id.label_tittle).text = burger.tittle
-        findViewById<TextView>(R.id.label_likes).text = burger.likes
+        findViewById<TextView>(R.id.label_ofert).text = burger.discount
+        findViewById<TextView>(R.id.label_tittle).text = burger.title
+        findViewById<TextView>(R.id.label_likes).text = burger.rate
         findViewById<TextView>(R.id.label_time).text = burger.time
     }
 }

@@ -15,10 +15,11 @@ class XmlLocalDataSource (private val context : Context){
     fun getBurger () : Either<ErrorApp, Burger>{
         return try{
             Burger (
-                sharedPref.getString("ofert", "")!!,
-                sharedPref.getString("tittle", "")!!,
-                sharedPref.getString("likes", "")!!,
-                sharedPref.getString("time", "")!!
+                sharedPref.getString("title", "")!!,
+                sharedPref.getString("discount", "")!!,
+                sharedPref.getString("rate", "")!!,
+                sharedPref.getString("time", "")!!,
+                sharedPref.getString("url_image", "")!!
             ).right()
         }catch (ex : Exception){
             return ErrorApp.UnknowError.left()
@@ -28,10 +29,11 @@ class XmlLocalDataSource (private val context : Context){
     fun saveBurger(burger: Burger) : Either<ErrorApp, Boolean> {
         return try{
             with(sharedPref.edit()){
-                putString("ofert", burger.ofert)
-                putString("tittle", burger.tittle)
-                putString("likes", burger.likes)
+                putString("tittle", burger.title)
+                putString("ofert", burger.discount)
+                putString("likes", burger.rate)
                 putString("time", burger.time)
+                putString("url_image", burger.url_image)
                 apply()
             }
             true.right()
