@@ -1,79 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="20dp">
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/image_burger"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/burguer" />
+
+    <TextView
+        android:id="@+id/label_ofert"
         android:layout_width="wrap_content"
-        android:layout_height="230dp"
-        android:background="@drawable/burguer"
-        android:id="@+id/pather2" >
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="30dp"
+        android:padding="10dp"
+        tools:text="-15%"
+        android:textSize="35sp"
+        android:background="@color/orange"/>
 
-        <TextView
-            android:id="@+id/label_ofert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/orange"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:padding="10dp"
-            tools:text="-15%"
-            android:textSize="25sp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="20dp"/>
-
-        <TextView
-            android:id="@+id/label_tittle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textColor="@color/white"
-            android:textSize="35sp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:layout_below="@id/pather2"
-        android:layout_marginTop="10dp">
-
-        <ImageView
-            android:id="@+id/img_likes"
-            android:layout_width="wrap_content"
-            android:layout_height="43dp"
-            android:src="@drawable/emojilike"/>
+    <TextView
+        android:id="@+id/label_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/image_burger"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/image_burger"
+        tools:text="Burger it"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
 
 
-        <TextView
-            android:id="@+id/label_likes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/img_likes"
-            android:layout_alignParentBottom="true"
-            android:textSize="20sp"/>
+    <ImageView
+        android:id="@+id/img_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_burger"
+        tools:src="@drawable/emojilike"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/emojitime"
-            android:layout_toLeftOf="@id/label_time"/>
 
-        <TextView
-            android:id="@+id/label_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/label_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/img_likes"
+        app:layout_constraintTop_toBottomOf="@id/image_burger"
+        app:layout_constraintBottom_toBottomOf="@id/img_likes"
+        android:textSize="20sp"
+        tools:text="98%"/>
+
+    <TextView
+        android:id="@+id/label_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/image_burger"
+        app:layout_constraintBottom_toBottomOf="@id/img_likes"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        tools:text="20-30min"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/image_burger"
+        app:layout_constraintBottom_toBottomOf="@id/img_likes"
+        app:layout_constraintEnd_toStartOf="@id/label_time"
+        android:src="@drawable/emojitime" />
 
 
 
-    </RelativeLayout>
-
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

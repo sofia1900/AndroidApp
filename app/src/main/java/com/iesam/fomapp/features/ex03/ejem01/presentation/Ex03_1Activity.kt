@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.iesam.fomapp.R
+import com.iesam.fomapp.app.extensions.setUrl
 import com.iesam.fomapp.databinding.ActivityEx031Binding
 import com.iesam.fomapp.features.ex03.ejem01.data.BurgerDataRepository
 import com.iesam.fomapp.features.ex03.ejem01.data.local.XmlLocalDataSource
@@ -48,9 +49,13 @@ class Ex03_1Activity : AppCompatActivity() {
     }
 
     private fun bindData (burger : Burger){
-        findViewById<TextView>(R.id.label_ofert).text = burger.discount
-        findViewById<TextView>(R.id.label_tittle).text = burger.title
-        findViewById<TextView>(R.id.label_likes).text = burger.rate
-        findViewById<TextView>(R.id.label_time).text = burger.time
+        binding.apply {
+            labelOfert.text = burger.discount
+            labelTittle.text = burger.title
+            labelLikes.text = burger.rate
+            labelTime.text = burger.time
+            imageBurger.setUrl(burger.url_image)
+        }
+
     }
 }
