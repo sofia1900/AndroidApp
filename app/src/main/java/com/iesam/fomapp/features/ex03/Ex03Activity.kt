@@ -10,7 +10,7 @@ import com.iesam.fomapp.features.ex03.ejem02.presentation.Ex03_2Activity
 import com.iesam.fomapp.features.ex03.ejem03.presentation.Ex03_3Activity
 import com.iesam.fomapp.features.ex03.ejem04.Ex03_4Activity
 import com.iesam.fomapp.features.ex03.ejem05.Ex03_5Activity
-import com.iesam.fomapp.features.ex03.ejem06.Ex03_6Activity
+import com.iesam.fomapp.features.ex03.ejem06.presentation.Ex03_6Activity
 
 class Ex03Activity : AppCompatActivity() {
 
