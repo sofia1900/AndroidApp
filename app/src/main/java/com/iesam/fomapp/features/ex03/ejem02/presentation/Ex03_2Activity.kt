@@ -3,6 +3,7 @@ package com.iesam.fomapp.features.ex03.ejem02.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import com.iesam.fomapp.app.extensions.setUrl
 import com.iesam.fomapp.databinding.ActivityEx032Binding
 import com.iesam.fomapp.features.ex03.ejem02.data.ConversationDataRepository
 import com.iesam.fomapp.features.ex03.ejem02.data.local.XmlLocalDataSource
@@ -44,9 +45,25 @@ class Ex03_2Activity : AppCompatActivity() {
 
     private fun bindData (listConver : List<Conversation>){
 
-        binding.row1.labelName.text = listConver.get(0).name
-        binding.row1.labelMsg.text = listConver.get(0).msg
-        binding.row1.labelTime.text = listConver.get(0).time
+        binding.apply {
+            row1.imagePerfil.setUrl(listConver.get(0).urlPerfile)
+            row1.labelName.text = listConver.get(0).name
+            row1.labelMsg.text = listConver.get(0).msg
+            row1.labelTime.text = listConver.get(0).time
+            row1.labelUnreadMsg.text = listConver.get(0).unreadMsg
+
+            row2.imagePerfil.setUrl(listConver.get(1).urlPerfile)
+            row2.labelName.text = listConver.get(1).name
+            row2.labelMsg.text = listConver.get(1).msg
+            row2.labelTime.text = listConver.get(1).time
+            row2.labelUnreadMsg.text = listConver.get(1).unreadMsg
+
+            row3.imagePerfil.setUrl(listConver.get(2).urlPerfile)
+            row3.labelName.text = listConver.get(2).name
+            row3.labelMsg.text = listConver.get(2).msg
+            row3.labelTime.text = listConver.get(2).time
+            row3.labelUnreadMsg.text = listConver.get(2).unreadMsg
+        }
 
     }
 
