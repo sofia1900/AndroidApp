@@ -15,7 +15,7 @@ class Ex03_1ViewModel (private val getBurgerUseCase: GetBurgerUseCase) : ViewMod
     private val _uiState = MutableLiveData<UiState>()
     val uiState: LiveData<UiState> = _uiState
 
-    fun getUser () {
+    fun loadBurger () {
         viewModelScope.launch(Dispatchers.IO) {
             getBurgerUseCase().fold(
                 {responseError(it)},
