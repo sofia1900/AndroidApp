@@ -12,7 +12,6 @@ import com.iesam.viewtapasapp.app.serialization.JsonSerialization
 class XmlLocalDataSource (private val context : Context, private val serialization: JsonSerialization){
 
     private val sharedPref = context.getSharedPreferences("dog", Context.MODE_PRIVATE)
-    private val gson = Gson()
 
     fun getDog () : Either<ErrorApp, Dog>{
         return try{

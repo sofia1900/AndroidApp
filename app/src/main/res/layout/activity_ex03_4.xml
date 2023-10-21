@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.ex03.ejem04.Ex03_4Activity">
+    tools:context=".features.ex03.ejem04.presentation.Ex03_4Activity">
 
     <ImageView
         android:id="@+id/image_alojamiento"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="230dp"
-        android:src="@drawable/alojamiento"
+        tools:src="@drawable/alojamiento"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -25,9 +26,11 @@
         android:layout_marginStart="15dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/label_description_alojamiento"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/label_titlle_alojamiento"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/label_titlle_alojamiento"
         android:layout_marginTop="10dp"
         android:textSize="20sp"
