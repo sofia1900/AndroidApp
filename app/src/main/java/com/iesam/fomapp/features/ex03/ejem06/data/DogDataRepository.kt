@@ -14,7 +14,7 @@ class DogDataRepository (private val xmlLocalDataSource: XmlLocalDataSource,
     override fun getDog(): Either<ErrorApp, Dog> {
         val dogLocal = xmlLocalDataSource.getDog()
 
-        return  if (dogLocal.isRight() && dogLocal.get().id != "") dogLocal.get().right()
+        return  if (dogLocal.isRight() && dogLocal.get().id != null) dogLocal.get().right()
         else{
             return apiRemoteDataSource.getDog().map {
                 xmlLocalDataSource.saveDog(it)
