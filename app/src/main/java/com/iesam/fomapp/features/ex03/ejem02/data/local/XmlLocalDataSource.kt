@@ -7,15 +7,15 @@ import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.app.left
 import com.iesam.fomapp.app.right
 import com.iesam.fomapp.features.ex03.ejem02.domain.Conversation
+import com.iesam.viewtapasapp.app.serialization.JsonSerialization
 
-class XmlLocalDataSource (private val context : Context){
+class XmlLocalDataSource (private val context : Context, private val serialization: JsonSerialization){
 
     private val sharedPref = context.getSharedPreferences("conversations", Context.MODE_PRIVATE)
-    private val gson = Gson()
     fun findAllConversations () : Either<ErrorApp, List<Conversation>> {
         val conversationsMap = sharedPref.all as Map<String, String>
         val listConverGson = conversationsMap.values.map {
-            gson.fromJson(it, Conversation::class.java)
+            serialization.fromJson(it, Conversation::class.java)
         }
         return listConverGson.right()
     }
@@ -23,7 +23,7 @@ class XmlLocalDataSource (private val context : Context){
     fun saveConversation (conversation: Conversation) : Either<ErrorApp, Boolean>{
         return try{
             with(sharedPref.edit()){
-                val jsonConversation = gson.toJson(conversation, Conversation::class.java)
+                val jsonConversation = serialization.toJson(conversation, Conversation::class.java)
                 putString(conversation.id, jsonConversation)
                 apply()
             }

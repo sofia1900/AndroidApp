@@ -10,13 +10,14 @@ import com.iesam.fomapp.features.ex03.ejem02.data.local.XmlLocalDataSource
 import com.iesam.fomapp.features.ex03.ejem02.data.remote.ApiRemoteDataSource
 import com.iesam.fomapp.features.ex03.ejem02.domain.Conversation
 import com.iesam.fomapp.features.ex03.ejem02.domain.FindAllConversationUseCase
+import com.iesam.viewtapasapp.app.serialization.GsonSerialization
 
 class Ex03_2Activity : AppCompatActivity() {
 
     lateinit var binding: ActivityEx032Binding
 
     private val viewModel : Ex03_2ViewModel by lazy {
-        Ex03_2ViewModel(FindAllConversationUseCase(ConversationDataRepository(XmlLocalDataSource(this), ApiRemoteDataSource())))
+        Ex03_2ViewModel(FindAllConversationUseCase(ConversationDataRepository(XmlLocalDataSource(this, GsonSerialization()), ApiRemoteDataSource())))
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

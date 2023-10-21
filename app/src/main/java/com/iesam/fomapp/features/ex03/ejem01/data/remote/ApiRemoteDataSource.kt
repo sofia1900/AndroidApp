@@ -30,7 +30,7 @@ class ApiRemoteDataSource {
                 val time = items.time
                 val image = items.url_image
 
-                return Burger(title, discount, rate, time, image).right()
+                return Burger("1", title, discount, rate, time, image).right()
             } else {
                 throw RuntimeException()
             }
