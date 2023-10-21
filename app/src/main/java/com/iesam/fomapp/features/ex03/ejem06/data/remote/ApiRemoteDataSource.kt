@@ -32,7 +32,7 @@ class ApiRemoteDataSource {
 
                 return Dog("1", name, description, sex, date, image).right()
             } else {
-                throw RuntimeException()
+                throw Exception()
             }
         } catch (e: Exception) {
             return ErrorApp.UnknowError.left()

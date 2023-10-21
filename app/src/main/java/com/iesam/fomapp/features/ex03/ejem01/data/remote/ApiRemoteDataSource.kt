@@ -32,7 +32,7 @@ class ApiRemoteDataSource {
 
                 return Burger("1", title, discount, rate, time, image).right()
             } else {
-                throw RuntimeException()
+                throw Exception()
             }
         } catch (e: Exception) {
             return ErrorApp.UnknowError.left()

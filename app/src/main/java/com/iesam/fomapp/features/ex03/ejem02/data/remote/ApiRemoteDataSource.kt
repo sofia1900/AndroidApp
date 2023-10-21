@@ -41,7 +41,7 @@ class ApiRemoteDataSource {
                 return conversations.right()
 
             } else {
-                throw RuntimeException()
+                throw Exception()
             }
         } catch (e: Exception) {
             return ErrorApp.UnknowError.left()
