@@ -13,6 +13,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiRemoteDataSource {
+
+    /*  MIRAR ESTO https://howtodoinjava.com/retrofit2/retrofit-builder-api/
+        Incluye OkHttpClient
+     */
     private val retrofit = Retrofit.Builder()
         .baseUrl("https://dam.sitehub.es/curso-2023-2024/api/")
         .addConverterFactory(GsonConverterFactory.create())
@@ -23,7 +27,7 @@ class ApiRemoteDataSource {
     fun getAlojamiento () : Either<ErrorApp, Alojamiento>{
         try {
             val response = apiService.getAlojamiento().execute()
-            //Executer() ejecuta el comando en algún momento en el futuro ; Planificar el trabajo para su posterior ejecución
+            //execute() https://howtodoinjava.com/retrofit2/retrofit-sync-async-calls/
 
             if(response.isSuccessful){
 
@@ -46,31 +50,30 @@ class ApiRemoteDataSource {
     /*
      https://devexpert.io/retrofit-android-kotlin/
      FALTA QUE LA FUNCION DEVUELVE EL EITHER
+     enqueue hilo secundario https://howtodoinjava.com/retrofit2/retrofit-sync-async-calls/
 
-     fun getAlojamiento () : Either<ErrorApp, Alojamiento>{
-        //enqueue hilo secundario
-         apiService.getAlojamiento().enqueue(object : Callback<AlojamientoApiModel>{
+     apiService.getAlojamiento().enqueue(object : Callback<AlojamientoApiModel>{
 
-             override fun onResponse(call: Call<AlojamientoApiModel>, response: Response<AlojamientoApiModel>) {
-                 // Procesar respuesta exitosa
-                 try {
-                     if(response.isSuccessful){
-                         val items = response.body()!!
-                         val title = items.title
-                         val description = items.description
-                         val url = items.url
-                     }
-                 }catch (e : Exception) {
-                     ErrorApp.UnknowError
+         override fun onResponse(call: Call<AlojamientoApiModel>, response: Response<AlojamientoApiModel>) {
+             // Procesar respuesta exitosa
+             try {
+                 if(response.isSuccessful){
+                     val items = response.body()!!
+                     val title = items.title
+                     val description = items.description
+                     val url = items.url
                  }
+             }catch (e : Exception) {
+                 ErrorApp.UnknowError
              }
+         }
 
-             override fun onFailure(call: Call<AlojamientoApiModel>, t: Throwable) {
-                 // Procesar error en la petición
-                 val error = ErrorApp.UnknowError
-             }
-         })
-     }
+         override fun onFailure(call: Call<AlojamientoApiModel>, t: Throwable) {
+             // Procesar error en la petición
+             val error = ErrorApp.UnknowError
+         }
+     })
+
      */
 
 }
