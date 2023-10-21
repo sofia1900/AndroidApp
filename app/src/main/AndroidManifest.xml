@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permisos de internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +16,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FomApp"
         tools:targetApi="31">
+        <activity
+            android:name=".features.ex04.presentation.Ex04Activity"
+            android:exported="false" />
+        <activity
+            android:name=".features.ex03.ejem06.Ex03_6Activity"
+            android:exported="false" />
+        <activity
+            android:name=".features.ex03.ejem05.Ex03_5Activity"
+            android:exported="false" />
+        <activity
+            android:name=".features.ex03.ejem04.Ex03_4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".features.ex03.ejem03.presentation.Ex03_3Activity"
+            android:exported="false" />
         <activity
             android:name=".features.ex01.presentation.Ex01FormActivity"
             android:exported="false" />

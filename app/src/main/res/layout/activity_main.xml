@@ -31,4 +31,12 @@
         android:layout_margin="20dp"
         android:text="@string/action_03_form" />
 
+    <Button
+        android:id="@+id/action_04Form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="@string/action_04_form" />
+
 </LinearLayout>
