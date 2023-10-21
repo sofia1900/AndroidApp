@@ -10,7 +10,7 @@ import com.iesam.viewtapasapp.app.serialization.JsonSerialization
 
 class XmlLocalDataSource (private val context : Context, private val serialization: JsonSerialization) {
 
-    private val sharedPref = context.getSharedPreferences("alojamineto", Context.MODE_PRIVATE)
+    private val sharedPref = context.getSharedPreferences("alojamiento", Context.MODE_PRIVATE)
 
     fun getAlojamiento () : Either<ErrorApp, Alojamiento> {
         return try{
