@@ -35,4 +35,3 @@ class XmlLocalDataSource (private val context : Context, private val serializati
         }
     }
 }
-
