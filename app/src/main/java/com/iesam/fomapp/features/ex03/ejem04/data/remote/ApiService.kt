@@ -7,5 +7,6 @@ import retrofit2.http.GET
 interface ApiService {
     @GET("youth-card-view.json")
     fun getAlojamiento () : Call<AlojamientoApiModel>
+    //si pongo suspend SOLO puede ser llamado desde una coroutine
 
 }
