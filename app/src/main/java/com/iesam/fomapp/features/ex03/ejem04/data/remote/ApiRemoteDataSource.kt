@@ -49,7 +49,6 @@ class ApiRemoteDataSource {
 
     /*
      https://devexpert.io/retrofit-android-kotlin/
-     FALTA QUE LA FUNCION DEVUELVE EL EITHER
      enqueue hilo secundario https://howtodoinjava.com/retrofit2/retrofit-sync-async-calls/
 
      apiService.getAlojamiento().enqueue(object : Callback<AlojamientoApiModel>{
