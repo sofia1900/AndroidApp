@@ -1,9 +1,9 @@
-package com.iesam.fomapp.features.ex03.ejem01.data.remote
+package com.iesam.fomapp.features.ex04.data.remote
 
 import com.iesam.fomapp.app.Either
 import com.iesam.fomapp.app.ErrorApp
 import com.iesam.fomapp.app.right
-import com.iesam.fomapp.features.ex03.ejem01.domain.Burger
+import com.iesam.fomapp.features.ex04.domain.Burger
 
 class ApiMockRemoteDataSource {
 

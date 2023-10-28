@@ -23,4 +23,36 @@
         android:layout_margin="20dp"
         android:text="@string/action_3_2" />
 
+    <Button
+        android:id="@+id/action_3_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="@string/action_3_3" />
+
+    <Button
+        android:id="@+id/action_3_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="@string/action_3_4" />
+
+    <Button
+        android:id="@+id/action_3_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="@string/action_3_5" />
+
+    <Button
+        android:id="@+id/action_3_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="@string/action_3_6" />
+
 </LinearLayout>

@@ -18,15 +18,22 @@
     <string name="action_01_form">Ejercicio 01 Form</string>
     <string name="action_02_form">Ejercicio 02 Form</string>
     <string name="action_03_form">Ejercicio 03 Views</string>
+    <string name="action_04_form">Ejercicio 04 View with Glide Loading and Error</string>
 
 
     <string name="action_3_1">Vista 1 Hamburguesa</string>
     <string name="action_3_2">Vista 2 Chat</string>
-
+    <string name="action_3_3">Vista 3 Descargas Peliculas</string>
+    <string name="action_3_4">Vista 4 Alojamiento</string>
+    <string name="action_3_5">Vista 5 Carné Jóven</string>
+    <string name="action_3_6">Vista 6 Huellas</string>
 
 
     <string name="label_chat1Name">Fin de semana</string>
     <string name="label_chat1Time">9:49</string>
+
+
+    <string name="label_unknow_error">Error desconocido</string>
 
 
 </resources>
