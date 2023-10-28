@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.ex03.ejem05.Ex03_5Activity"
+    android:background="@color/pink"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/label_tittle_carne1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Mi carné virtual"
+        android:textColor="@color/pinkF"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/group_carne1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/label_tittle_carne1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_tittle_carne1"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Aún no has añadido tus datos para generar una imagen de tu carné virtual"
+            android:padding="30dp"
+            android:textSize="15sp"
+            android:textAlignment="center"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Generar un carné virtual"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/label_tittle_carne2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/group_carne1"
+        app:layout_constraintStart_toStartOf="@id/label_tittle_carne1"
+        tools:text="Carné virtual"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/pinkF"
+        android:textStyle="bold"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/group_carne2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/label_tittle_carne2"
+        app:layout_constraintStart_toStartOf="@id/label_tittle_carne2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/image_solicitud_carne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/label_tittle_carne2"
+            app:layout_constraintTop_toTopOf="@id/group_carne2"
+            android:src="@drawable/solicitud_carne"
+            tools:ignore="NotSibling" />
+
+        <TextView
+            android:id="@+id/label_tittle_solicitud_carne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/image_solicitud_carne"
+            app:layout_constraintTop_toTopOf="@id/group_carne2"
+            tools:text="Solcitud carné virtual"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/label_description_solicitud"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/image_solicitud_carne"
+            app:layout_constraintTop_toBottomOf="@id/label_tittle_solicitud_carne"
+            app:layout_constraintStart_toStartOf="@id/label_tittle_solicitud_carne"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="25dp"
+            tools:text="Si ya dispones del carné jóven, puedes solicitar tu carné virtual gratis." />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/group_carne2"
+            app:layout_constraintTop_toTopOf="@id/label_description_solicitud"
+            app:layout_constraintBottom_toBottomOf="@id/label_description_solicitud"
+            android:src="@drawable/flecha" />
+
+        <ImageView
+            android:id="@+id/image_add_carne_movil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/image_solicitud_carne"
+            app:layout_constraintTop_toBottomOf="@id/image_solicitud_carne"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/solicitud_carne1"
+            />
+
+        <TextView
+            android:id="@+id/label_tittle_add_carne_movil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/image_add_carne_movil"
+            app:layout_constraintTop_toTopOf="@id/image_add_carne_movil"
+            tools:text="Solcitud carné desde tu móvil"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/label_description_solicitud2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/image_add_carne_movil"
+            app:layout_constraintTop_toBottomOf="@id/label_tittle_add_carne_movil"
+            app:layout_constraintStart_toStartOf="@id/label_tittle_add_carne_movil"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="25dp"
+            tools:text="Selecciona esta opción si ya tienes el carné descargado en tu dispositivo móvil" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/group_carne2"
+            app:layout_constraintTop_toTopOf="@id/label_description_solicitud2"
+            app:layout_constraintBottom_toBottomOf="@id/label_description_solicitud2"
+            android:src="@drawable/flecha" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
