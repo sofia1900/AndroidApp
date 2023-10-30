@@ -29,6 +29,8 @@
     <string name="action_3_5">Vista 5 Carné Jóven</string>
     <string name="action_3_6">Vista 6 Huellas</string>
 
+    <string name="action_5_1" translatable="false">Vista 1 Audio 21</string>
+
 
     <string name="label_chat1Name">Fin de semana</string>
     <string name="label_chat1Time">9:49</string>

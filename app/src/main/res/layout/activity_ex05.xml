@@ -4,6 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.ex05.Ex05Activity">
+    tools:context=".features.ex05.Ex05Activity"
+    android:layout_margin = "@dimen/margin_ex5">
+
+    <Button
+        android:id="@+id/buton_ex01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/action_05_styles" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

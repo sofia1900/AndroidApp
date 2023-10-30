@@ -1,12 +1,28 @@
 package com.iesam.fomapp.features.ex05
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.iesam.fomapp.R
+import com.iesam.fomapp.databinding.ActivityEx05Binding
+import com.iesam.fomapp.features.ex05.example01.Example01Activity
 
 class Ex05Activity : AppCompatActivity() {
+
+    lateinit var binding : ActivityEx05Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ex05)
+        bindView()
+        setupView()
+    }
+
+    private fun bindView(){
+        binding = ActivityEx05Binding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
+
+    private fun setupView (){
+        binding.butonEx01.setOnClickListener {
+            startActivity(Intent(this, Example01Activity::class.java))
+        }
     }
 }

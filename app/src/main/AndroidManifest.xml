@@ -16,6 +16,9 @@
         android:theme="@style/Theme.FomApp"
         tools:targetApi="31">
         <activity
+            android:name=".features.ex05.example01.Example01Activity"
+            android:exported="false" />
+        <activity
             android:name=".features.ex05.Ex05Activity"
             android:exported="false" />
         <activity
