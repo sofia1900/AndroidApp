@@ -9,6 +9,7 @@ import com.iesam.fomapp.features.ex01.presentation.Ex01FormActivity
 import com.iesam.fomapp.features.ex02.presentation.Ex02FormActivity
 import com.iesam.fomapp.features.ex03.Ex03Activity
 import com.iesam.fomapp.features.ex04.presentation.Ex04Activity
+import com.iesam.fomapp.features.ex05.Ex05Activity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.action_04Form).setOnClickListener {
             startActivity(Intent(this, Ex04Activity::class.java))
+        }
+
+        findViewById<Button>(R.id.action_05Styles).setOnClickListener {
+            startActivity(Intent(this, Ex05Activity::class.java))
         }
     }
 }
