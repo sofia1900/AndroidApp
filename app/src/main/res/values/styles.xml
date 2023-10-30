@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <style name="AppBorder_image_view1">
+        <item name="cornerSize"> 50% </item>
+    </style>
+
+    <style name="AppSubtitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="color">@color/md_theme_light_primary</item>
+    </style>
+
+    <style name="AppCardView" parent="Widget.Material3.CardView.Filled">
+
+    </style>
+
+    <style name="AppTextCard" parent="TextAppearance.Material3.TitleMedium">
+
+    </style>
+</resources>

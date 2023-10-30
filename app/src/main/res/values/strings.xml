@@ -38,6 +38,13 @@
 
     <string name="label_unknow_error">Error desconocido</string>
 
+    <string name="label_title_viewStyle1" >AUDIO 21</string>
+    <string name="label_subtitle_viewStyle1" translatable="false">Datos</string>
+    <string name="label_factory" translatable="false">Otros Salud y Belleza</string>
+    <string name="label_email" translatable="false">Email no diponible</string>
+    <string name="label_phone" translatable="false">983154285</string>
+    <string name="label_web" translatable="false">https://audio21.es/</string>
+
 
 </resources>
 

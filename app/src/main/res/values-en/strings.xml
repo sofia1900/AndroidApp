@@ -35,4 +35,6 @@
     <string name="label_chat1Time">9:49</string>
 
     <string name="label_unknow_error">Unknown error</string>
+
+    <string name="label_title_viewStyle1" >AUDIO 21</string>
 </resources>
