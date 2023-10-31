@@ -16,6 +16,9 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".features.ex05.example02.Example02Activity"
+            android:exported="false" />
+        <activity
             android:name=".features.ex05.example01.Example01Activity"
             android:exported="false" />
         <activity

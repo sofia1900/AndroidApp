@@ -30,6 +30,7 @@
     <string name="action_3_6">Vista 6 Huellas</string>
 
     <string name="action_5_1" translatable="false">Vista 1 Audio 21</string>
+    <string name="action_5_2" translatable="false">Vista 2 Descuento</string>
 
 
     <string name="label_chat1Name">Fin de semana</string>
@@ -38,7 +39,7 @@
 
     <string name="label_unknow_error">Error desconocido</string>
 
-    <string name="label_title_viewStyle1" >AUDIO 21</string>
+    <string name="label_title_viewStyle1">AUDIO 21</string>
     <string name="label_subtitle_viewStyle1" translatable="false">Datos</string>
     <string name="label_factory" translatable="false">Otros Salud y Belleza</string>
     <string name="label_email" translatable="false">Email no diponible</string>

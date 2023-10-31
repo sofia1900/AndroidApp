@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.iesam.fomapp.databinding.ActivityEx05Binding
 import com.iesam.fomapp.features.ex05.example01.Example01Activity
+import com.iesam.fomapp.features.ex05.example02.Example02Activity
 
 class Ex05Activity : AppCompatActivity() {
 
@@ -24,5 +25,10 @@ class Ex05Activity : AppCompatActivity() {
         binding.butonEx01.setOnClickListener {
             startActivity(Intent(this, Example01Activity::class.java))
         }
+
+        binding.butonEx02.setOnClickListener {
+            startActivity(Intent(this, Example02Activity::class.java))
+        }
+
     }
 }
