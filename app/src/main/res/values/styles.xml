@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppBorder_image_view1">
+    <style name="AppBorder_image">
         <item name="cornerSize"> 5% </item>
         <item name="cornerFamily">rounded</item>
     </style>
