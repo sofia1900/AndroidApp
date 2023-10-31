@@ -50,7 +50,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:scaleType="centerCrop"
-                app:shapeAppearanceOverlay="@style/AppBorder_image_view1"
+                app:shapeAppearanceOverlay="@style/AppBorder_image"
                 app:srcCompat="@drawable/ic_view2" />
 
             <TextView
