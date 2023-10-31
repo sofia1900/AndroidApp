@@ -22,8 +22,9 @@
             <com.google.android.material.appbar.MaterialToolbar
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:title="@string/label_title_viewStyle1"
                 app:navigationIcon="@drawable/ic_arrow"
+                app:title="@string/label_title_viewStyle1"
+                style="@style/AppTitle"
                 android:elevation="0dp"/>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>

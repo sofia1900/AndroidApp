@@ -2,6 +2,11 @@
 <resources>
     <style name="AppBorder_image_view1">
         <item name="cornerSize"> 50% </item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="AppTitle" parent="">
+        <item name="android:titleTextColor"> @color/seed</item>
     </style>
 
     <style name="AppSubtitle" parent="TextAppearance.Material3.TitleMedium">
