@@ -16,7 +16,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:navigationIcon="@drawable/ic_arrow"
-                app:title="@string/label_title_viewStyle1"
+                app:title="@string/label_title_viewStyle2"
                 app:menu="@menu/main_menu"
                 style="@style/AppTollBar"
                 android:elevation="0dp"/>
