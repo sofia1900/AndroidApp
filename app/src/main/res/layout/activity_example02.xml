@@ -49,8 +49,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:scaleType="centerCrop"
-                style="@style/AppBorder_image_view1"
-                android:src="@drawable/ic_view2" />
+                app:shapeAppearanceOverlay="@style/AppBorder_image_view1"
+                app:srcCompat="@drawable/ic_view2" />
 
             <TextView
                 android:id="@+id/label_subtitle"
