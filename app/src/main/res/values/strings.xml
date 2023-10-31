@@ -46,6 +46,13 @@
     <string name="label_phone" translatable="false">983154285</string>
     <string name="label_web" translatable="false">https://audio21.es/</string>
 
+    <string name="label_title_viewStyle2" translatable="false">5% de descuento, 15%</string>
+    <string name="label_subtitle_viewStyle2" translatable="false">Descuento</string>
+    <string name="label_card1" translatable="false">5% de descuento, 15%</string>
+    <string name="label_card2" translatable="false">5% de descuento en libreria, 15% Papeleria</string>
+    <string name="label_ic_favorite" translatable="false">Favorito</string>
+    <string name="label_ic_share" translatable="false">Compartir</string>
+
 
 </resources>
 
