@@ -14,20 +14,13 @@
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            style="?attr/collapsingToolbarLayoutMediumStyle"
+        <com.google.android.material.appbar.MaterialToolbar
+            style="@style/AppTollBar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/collapsingToolbarLayoutMediumSize" >
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:navigationIcon="@drawable/ic_arrow"
-                app:title="@string/label_title_viewStyle1"
-                style="@style/AppTitle"
-                android:elevation="0dp"/>
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_arrow"
+            app:title="@string/label_title_viewStyle1"
+            android:elevation="0dp"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
