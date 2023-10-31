@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppBorder_image_view1">
-        <item name="cornerSize"> 50% </item>
+        <item name="cornerSize"> 10% </item>
         <item name="cornerFamily">rounded</item>
     </style>
 
