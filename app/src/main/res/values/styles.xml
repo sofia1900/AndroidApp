@@ -5,8 +5,8 @@
         <item name="cornerFamily">rounded</item>
     </style>
 
-    <style name="AppTitle" parent="">
-        <item name="android:titleTextColor"> @color/seed</item>
+    <style name="AppTollBar" parent="TextAppearance.Material3.ActionBar.Title">
+        <item name="titleTextColor"> @color/seed</item>
     </style>
 
     <style name="AppSubtitle" parent="TextAppearance.Material3.TitleMedium">
