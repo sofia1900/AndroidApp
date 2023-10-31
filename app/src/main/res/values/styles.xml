@@ -17,7 +17,7 @@
 
     </style>
 
-    <style name="AppTextCard" parent="TextAppearance.Material3.TitleMedium">
+    <style name="AppTextCard" parent="TextAppearance.Material3.BodyMedium">
         <item name="android:textColor">@color/gris</item>
     </style>
 </resources>
