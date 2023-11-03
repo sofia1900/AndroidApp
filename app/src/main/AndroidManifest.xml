@@ -13,6 +13,15 @@
         android:theme="@style/Theme.FomApp"
         tools:targetApi="31">
         <activity
+            android:name=".features.ex03.ejem04.Ex03_4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".features.ex03.ejem04.Ex03_4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".features.ex03.ejem03.presentation.Ex03_3Activity"
+            android:exported="false" />
+        <activity
             android:name=".features.ex01.presentation.Ex01FormActivity"
             android:exported="false" />
         <activity
