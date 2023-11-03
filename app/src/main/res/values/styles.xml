@@ -5,8 +5,8 @@
         <item name="cornerFamily">rounded</item>
     </style>
 
-    <style name="AppTollBar" parent="Widget.MaterialComponents.Toolbar">
-        <item name="titleTextColor"> @color/md_theme_light_primary</item>
+    <style name="AppTollBar" parent="Widget.Material3.Toolbar">
+        <item name="expandedTitleTextColor"> @color/md_theme_light_primary</item>
     </style>
 
     <style name="AppSubtitle" parent="TextAppearance.Material3.TitleMedium">
